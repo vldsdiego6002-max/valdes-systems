@@ -386,6 +386,11 @@ nav{
 .fn-text{
   font-size:17px;color:var(--text-1);line-height:1.55;margin:0;
 }
+@media(max-width:600px){
+  .field-note{flex-direction:column;gap:10px;padding:16px 18px}
+  .fn-label{white-space:normal;padding-top:0}
+  .fn-text{font-size:16px;line-height:1.5}
+}
 
 /* ─────────────────────────────────────────────────────────
    BUILT FOR — trade pill grid
@@ -522,7 +527,7 @@ nav{
 /* iPhone mockup — CSS drawn, no image needed */
 .iphone-wrap{display:flex;justify-content:center;align-items:center}
 .iphone{
-  width:140px;
+  width:230px;
   background:#0d1117;
   border-radius:36px;
   border:6px solid #1c2531;
@@ -530,11 +535,11 @@ nav{
     0 0 0 1px rgba(255,255,255,0.05),
     0 28px 56px rgba(0,0,0,0.5),
     inset 0 1px 0 rgba(255,255,255,0.06);
-  padding:14px 0 18px;position:relative;overflow:hidden;
+  padding:10px 0 12px;position:relative;overflow:hidden;
 }
 .iphone-notch{
   width:70px;height:18px;background:#0d1117;
-  border-radius:0 0 14px 14px;margin:0 auto 8px;
+  border-radius:0 0 14px 14px;margin:0 auto 4px;
   box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
 }
 .iphone-header{
@@ -552,7 +557,7 @@ nav{
 .iphone-screen{
   padding:0 8px;
   display:flex;flex-direction:column;gap:4px;
-  min-height:200px;
+  min-height:330px;
 }
 .sms-bubble{
   max-width:85%;padding:6px 10px;
@@ -573,12 +578,18 @@ nav{
   letter-spacing:.04em;margin-top:1px;padding:0 3px;
 }
 .sms-timestamp.right{text-align:right}
-/* Auto-reply — hidden until demo fires */
+/* Auto-reply — hidden until demo fires (max-height collapse prevents skyscraper bug) */
 .sms-auto{
   opacity:0;transform:translateY(6px);
-  transition:opacity .4s ease .1s,transform .4s ease .1s;
+  max-height:0;overflow:hidden;margin:0;padding-top:0;padding-bottom:0;
+  transition:max-height .35s ease,opacity .4s ease .1s,transform .4s ease .1s,padding .25s ease,margin .25s ease;
 }
-.sms-auto.show{opacity:1;transform:none}
+.sms-auto.show{
+  opacity:1;transform:none;
+  max-height:300px;
+}
+.sms-bubble.sms-auto.show{padding:6px 10px}
+.sms-timestamp.sms-auto.show{padding:0 3px}
 .iphone-placeholder{
   font-family:'IBM Plex Mono',monospace;
   font-size:9px;color:rgba(255,255,255,0.3);
@@ -1154,8 +1165,8 @@ footer{
   .hero-stats{gap:20px}
   .title-block{display:none}
   .demo-layout{gap:28px}
-  .iphone{width:130px}
-  .iphone-screen{min-height:180px}
+  .iphone{width:200px}
+  .iphone-screen{min-height:280px}
   .pricing-cards{grid-template-columns:1fr}
   .price-card.featured{order:-1}
   .about-layout{grid-template-columns:1fr}
