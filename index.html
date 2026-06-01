@@ -3,727 +3,2925 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Valdes Systems — Stop Losing Jobs to Missed Calls</title>
-<meta name="description" content="Valdes Systems builds automation that stops home-service businesses from losing jobs to missed calls and slow follow-up. Built by someone who's done the work.">
+
+<!-- SEO: title + description (audit fix #4) -->
+<title>Valdes Systems — Missed-Call Text-Back for Trades | Saint Marys, GA</title>
+<meta name="description" content="Valdes Systems builds automated missed-call text-back systems for home-service businesses in Saint Marys, Kingsland, and Jacksonville. Never lose a job to a missed call again. Built by someone who's done the work.">
+
+<!-- OG/social tags (audit fix #5) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stop Losing Jobs to Missed Calls — Valdes Systems">
+<meta property="og:description" content="Automated missed-call text-back for trades in Saint Marys, Kingsland, and Jacksonville. A lead that gets a text back in 10 seconds doesn't call the next guy.">
+<meta property="og:url" content="https://valdessystems.com">
+<meta property="og:site_name" content="Valdes Systems">
+<meta property="og:image" content="/og-image.png">
+<!-- TODO: Diego — screenshot the hero at 1200×630, save as /og-image.png on your host -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stop Losing Jobs to Missed Calls — Valdes Systems">
+<meta name="twitter:description" content="Automated missed-call text-back for trades in Saint Marys, Kingsland, and Jacksonville.">
+<meta name="twitter:image" content="/og-image.png">
+
+<!-- LocalBusiness schema (audit fix #11) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Valdes Systems",
+  "description": "Automated missed-call text-back and business communication systems for home-service and trades businesses.",
+  "url": "https://valdessystems.com",
+  "email": "diego@valdessystems.com",
+  "telephone": "+1-317-273-9750",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Saint Marys",
+    "addressRegion": "GA",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {"@type":"City","name":"Saint Marys"},
+    {"@type":"City","name":"Kingsland"},
+    {"@type":"City","name":"Jacksonville"}
+  ],
+  "priceRange": "$$",
+  "founder": {"@type":"Person","name":"Diego Valdes"}
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=Sora:wght@400;500;600;700;800&family=Azeret+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --navy:#0f1f33;--navy-2:#16263d;--steel:#2a3f5c;--paper:#f5f6f8;--white:#fff;
-    --blueprint:#10314f;--bp-line:rgba(255,255,255,.13);--bp-line-strong:rgba(120,180,240,.32);
-    --orange:#f6831f;--orange-deep:#d96a0c;--safety:#ffb13c;--ink:#0c1726;
-    --muted:#7e8aa0;--line:#dde2ea;--line-dk:#27384f;
+/* ═══════════════════════════════════════════════════════════
+   PASS 3 — VALDES SYSTEMS
+   Direction: original dark blueprint navy, elevated.
+   Orange replaces gold. Side-by-side pricing.
+   Parallax depth via layered transforms. V portrait.
+   REV 03 · 2026.05.30 · DRAWN BY D. VALDES
+═══════════════════════════════════════════════════════════ */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+
+:root{
+  --paper:   #0E2A4D;
+  --paper-2: #0A2540;
+  --paper-3: #143155;
+  --grid:    rgba(255,255,255,0.04);
+  --orange:       #ED8B2F;
+  --orange-bright:#F49C45;
+  --orange-dim:   rgba(237,139,47,0.12);
+  --text-1: #F4F1EA;
+  --text-2: #B4C1D4;
+  --text-3: #6E7E96;
+  --rule:    rgba(255,255,255,0.10);
+  --rule-dim:rgba(255,255,255,0.06);
+  --max: 900px;
+  --r: 2px;
+}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--paper);
+  color:var(--text-1);
+  font-size:17px;
+  line-height:1.65;
+  overflow-x:hidden;
+}
+
+/* SKIP LINK */
+.skip-link{
+  position:absolute;top:-100%;left:0;
+  background:var(--orange);color:var(--paper);
+  padding:8px 18px;font-weight:600;font-size:14px;
+  text-decoration:none;z-index:9999;
+}
+.skip-link:focus{top:0}
+
+/* GRAIN OVERLAY — SVG fractal noise at 0.07 opacity, fixed so it rides behind page */
+.grain{
+  position:fixed;inset:0;width:100%;height:100%;
+  z-index:0;pointer-events:none;opacity:.07;
+}
+
+/* LAYOUT */
+.page{padding-top:88px}
+section{padding:80px 20px;position:relative;z-index:1}
+.inner{max-width:var(--max);margin:0 auto;position:relative;z-index:1}
+
+/* BLUEPRINT GRID TILE — reused across sections */
+.bp-grid{
+  position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:80px 80px;
+}
+
+/* TYPOGRAPHY */
+h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(40px,7vw,72px);
+  line-height:.94;letter-spacing:.01em;
+  color:var(--text-1);margin-bottom:24px;
+}
+h2 em{color:var(--orange);font-style:normal}
+h3{
+  font-family:'DM Sans',sans-serif;
+  font-size:18px;font-weight:600;
+  color:var(--text-1);margin-bottom:8px;
+}
+p{font-size:17px;color:var(--text-2);line-height:1.65;margin-bottom:14px}
+p:last-child{margin-bottom:0}
+strong{color:var(--text-1);font-weight:600}
+
+.sec-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.sec-label::before{content:'';width:20px;height:1px;background:var(--orange)}
+
+/* BUTTONS — orange filled = interactive only (color semantic rule enforced throughout) */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.04em;
+  color:var(--paper);background:var(--orange);
+  text-decoration:none;padding:12px 30px;
+  border:2px solid var(--orange);border-radius:var(--r);
+  transition:background .14s,color .14s;cursor:pointer;
+  font-style:normal;
+}
+.btn-primary:hover,.btn-primary:active{background:transparent;color:var(--orange)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--text-2);text-decoration:none;
+  padding:12px 22px;
+  border:1px solid var(--rule);border-radius:var(--r);
+  transition:background .14s,border-color .14s,color .14s;cursor:pointer;
+}
+.btn-ghost:hover{background:rgba(255,255,255,0.04);border-color:var(--orange);color:var(--text-1)}
+
+/* SCROLL REVEAL — scale-from-depth entrance (Change 4) */
+.reveal{
+  opacity:0;transform:translateY(14px) scale(0.96);
+  transition:opacity .7s cubic-bezier(.2,.7,.3,1),
+              transform .7s cubic-bezier(.2,.7,.3,1);
+}
+.reveal.visible{opacity:1;transform:translateY(0) scale(1)}
+.reveal.d1{transition-delay:.08s}
+.reveal.d2{transition-delay:.16s}
+.reveal.d3{transition-delay:.24s}
+.reveal.d4{transition-delay:.32s}
+
+/* ─────────────────────────────────────────────────────────
+   NAV
+   Orange bottom border — the "stamp" that anchors the nav.
+   V logo: left diagonal stroke is orange, right is warm white.
+───────────────────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(10,37,64,0.96);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:2px solid var(--orange);
+}
+.nav-inner{
+  max-width:var(--max);margin:0 auto;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  height:88px;gap:14px;padding:0 20px;
+}
+.nav-brand{
+  display:flex;align-items:center;
+  text-decoration:none;flex-shrink:0;
+}
+/* FIX 1 — stacked VALDES / dimension-line / SYSTEMS wordmark */
+.nav-stacked-wordmark{
+  display:inline-flex;flex-direction:column;align-items:center;gap:2px;
+}
+.nsw-valdes{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:23px;letter-spacing:.04em;
+  color:var(--text-1);line-height:1;
+}
+.nsw-divider{width:76px;height:10px;display:block;flex-shrink:0}
+.nsw-systems{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:14px;letter-spacing:.24em;
+  color:var(--text-1);line-height:1;
+}
+.nav-links{
+  display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1;
+}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:13px;letter-spacing:.04em;
+  color:var(--text-2);text-decoration:none;
+  padding:8px 12px;border-radius:var(--r);white-space:nowrap;
+  transition:color .14s,background .14s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--text-1);background:rgba(255,255,255,0.06)}
+.nav-cta{
+  display:inline-flex;align-items:center;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--paper);background:var(--orange);
+  text-decoration:none;padding:11px 22px;
+  border:2px solid var(--orange);border-radius:var(--r);
+  white-space:nowrap;flex-shrink:0;
+  transition:background .14s,color .14s;
+}
+.nav-cta:hover{background:transparent;color:var(--orange)}
+
+/* ─────────────────────────────────────────────────────────
+   HERO — 3-layer parallax
+   Layer A (.hero-layer-a): blueprint grid, scrolls at 0.3x
+   Layer B (.hero-layer-b): floating annotations, 0.6x
+   Layer C (.hero-inner): content, normal 1.0x
+   Both A and B use will-change:transform; driven by rAF in JS.
+   Stops animating past 1.4× viewport height (see JS).
+───────────────────────────────────────────────────────── */
+.hero{
+  min-height:100svh;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:100px 20px 72px;
+  position:relative;overflow:hidden;
+  background:var(--paper-2);
+}
+.hero-layer-a{
+  position:absolute;inset:-50% 0;
+  will-change:transform;pointer-events:none;z-index:0;
+}
+/* FIX 5 — bigger grid cells (80px) + slightly higher opacity = parallax movement is perceivable */
+.hero-layer-a .bp-grid{
+  position:absolute;inset:0;
+  background-size:80px 80px;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.06) 1px,transparent 1px);
+}
+/* Fade-to-nav vignette */
+.hero-layer-a::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:35%;
+  background:linear-gradient(transparent,var(--paper-2));
+}
+.hero-layer-b{
+  position:absolute;inset:-20% 0;
+  will-change:transform;pointer-events:none;z-index:1;
+}
+/* Floating drafting annotations — bump opacity so parallax movement on Layer B is visible */
+.anno{
+  position:absolute;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(180,193,212,0.22);white-space:nowrap;
+}
+.anno-1{top:14%;left:4%}
+.anno-2{top:38%;right:6%}
+.anno-3{bottom:28%;left:3%}
+.anno-4{top:60%;right:5%;font-size:9px}
+/* Dimension leader line on anno-1 */
+.anno-1::before{content:'';display:block;width:22px;height:1px;background:rgba(180,193,212,0.1);margin-bottom:3px}
+
+.hero-inner{max-width:var(--max);margin:0 auto;position:relative;z-index:2;width:100%}
+
+/* DWG tag above headline */
+.hero-dwg{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--text-3);margin-bottom:28px;
+  display:flex;align-items:center;gap:12px;
+}
+.hero-dwg::before{content:'';width:28px;height:1px;background:var(--text-3)}
+
+.hero h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(56px,11vw,120px);
+  line-height:.90;letter-spacing:.01em;
+  color:var(--text-1);margin-bottom:22px;
+}
+.hero h1 em{color:var(--orange);font-style:normal}
+
+.hero-sub{
+  font-size:clamp(18px,3vw,22px);
+  color:var(--text-2);max-width:52ch;
+  margin-bottom:12px;line-height:1.55;
+}
+
+/* Credibility line — quiet, confident, below supporting copy */
+.hero-cred{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;letter-spacing:.06em;
+  color:var(--text-3);margin-bottom:36px;
+  display:flex;align-items:center;gap:10px;line-height:1.4;
+}
+.hero-cred::before{content:'';width:14px;height:1px;background:var(--rule);flex-shrink:0}
+
+/* Stats row — above CTA buttons, separated by a rule */
+.hero-stats{
+  display:flex;flex-wrap:wrap;gap:36px;margin-bottom:36px;
+  border-top:1px solid var(--rule-dim);padding-top:28px;
+}
+/* FIX 3 — consistent annotation row on ALL stats so they baseline-align */
+.stat{display:flex;flex-direction:column;gap:4px}
+.stat-ann{
+  height:18px;display:flex;align-items:center;gap:4px;
+  font-family:'IBM Plex Mono',monospace;font-size:9px;
+  color:rgba(110,126,150,0.4);letter-spacing:.06em;
+  overflow:hidden;
+}
+.stat-ann--measure::before,.stat-ann--measure::after{
+  content:'';display:inline-block;
+  width:12px;height:1px;background:rgba(110,126,150,0.35);
+  flex-shrink:0;
+}
+.stat-val{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:34px;line-height:1;color:var(--text-1);
+}
+.stat-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3);
+}
+
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+/* Blueprint title block — bottom right of hero (authentic drafting mark) */
+.title-block{
+  position:absolute;bottom:18px;right:20px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--text-3);z-index:2;opacity:.5;
+}
+.title-block table{border-collapse:collapse}
+.title-block td{
+  padding:2px 7px;border:1px solid rgba(110,126,150,0.2);
+  line-height:1.5;
+}
+.title-block .tbl{color:rgba(110,126,150,0.5);font-size:8px}
+.title-block .tbv{color:rgba(180,193,212,0.5)}
+
+/* ─────────────────────────────────────────────────────────
+   FIELD NOTE — replaces ⚠ warning box.
+   Reframed: Diego underlined an important fact in his notebook.
+   Left orange bar, "FIELD NOTE 01 · INDUSTRY DATA" label.
+───────────────────────────────────────────────────────── */
+.field-note-section{background:var(--paper-2);padding:0 20px}
+.field-note-wrap{max-width:var(--max);margin:0 auto;padding:32px 0}
+.field-note{
+  border-left:3px solid var(--orange);
+  padding:18px 24px;
+  background:var(--orange-dim);
+  display:flex;align-items:flex-start;gap:16px;
+}
+.fn-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--orange);flex-shrink:0;padding-top:2px;white-space:nowrap;
+}
+.fn-text{
+  font-size:17px;color:var(--text-1);line-height:1.55;margin:0;
+}
+
+/* ─────────────────────────────────────────────────────────
+   BUILT FOR — trade pill grid
+   16 trades + "+ ANY TRADE THAT RUNS ON PHONE CALLS"
+───────────────────────────────────────────────────────── */
+.built-for-section{background:var(--paper)}
+.built-for-lead{
+  font-size:clamp(18px,3vw,22px);
+  color:var(--text-1);max-width:50ch;margin-bottom:28px;line-height:1.5;
+}
+.built-for-lead em{color:var(--orange);font-style:normal}
+.trade-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+/* Pills are NOT clickable — no hover state */
+.chip{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--text-2);
+  border:1px solid var(--rule);
+  padding:6px 14px;border-radius:var(--r);
+  background:var(--paper-3);
+}
+/* The "ANY TRADE" callout pill — orange, stands apart */
+.chip-any{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--orange);
+  border:1px solid var(--orange);
+  padding:6px 14px;border-radius:var(--r);
+  background:var(--orange-dim);
+}
+
+/* ─────────────────────────────────────────────────────────
+   THE FIX — 3-step process
+   Step 2 includes verbatim auto-text message (audit fix #6).
+   Step 3 copy updated: "THE LEAD STAYS WITH YOU" (Diego's note).
+───────────────────────────────────────────────────────── */
+.fix-section{background:var(--paper-3)}
+.fix-intro{font-size:18px;color:var(--text-2);max-width:50ch;margin-bottom:36px;line-height:1.55}
+.steps{display:flex;flex-direction:column;gap:0}
+.step{
+  display:grid;grid-template-columns:52px 1fr;gap:22px;
+  padding:24px 0;border-bottom:1px solid var(--rule-dim);align-items:start;
+}
+.step:last-child{border-bottom:none}
+.step-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:44px;line-height:1;color:rgba(255,255,255,0.07);padding-top:2px;
+}
+.step-content h3{font-size:19px;margin-bottom:6px}
+.step-content p{font-size:17px;color:var(--text-2);margin:0}
+/* Verbatim message preview box */
+.msg-preview{
+  margin-top:14px;
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-left:2px solid var(--orange);
+  padding:14px 18px;
+}
+.msg-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:8px;
+}
+.msg-text{font-size:16px;color:var(--text-1);line-height:1.55;font-style:italic}
+/* Sheet margin note — drafting language in section margin */
+.sheet-margin-note{
+  position:absolute;right:20px;top:50%;transform:translateY(-50%);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(110,126,150,0.3);writing-mode:vertical-rl;transform:rotate(180deg) translateY(50%);
+}
+
+/* ─────────────────────────────────────────────────────────
+   LIVE DEMO — iPhone mockup + form
+   Form on left, iPhone on right (stacks on mobile).
+   Audit fix #1: spam reassurance + expectation-setter.
+   Audit fix #7: demo above pricing.
+───────────────────────────────────────────────────────── */
+.demo-section{background:var(--paper-2)}
+.demo-layout{
+  display:grid;grid-template-columns:1fr;
+  gap:40px;align-items:center;
+}
+@media(min-width:640px){
+  .demo-layout{grid-template-columns:1fr 1fr}
+}
+.demo-expect{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:20px;
+  display:flex;align-items:center;gap:8px;
+}
+.demo-expect::before{content:'▶';font-size:9px}
+.demo-form{display:flex;flex-direction:column;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:5px}
+.form-group label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--text-2);
+}
+.form-group input{
+  background:var(--paper);
+  border:1px solid var(--rule);
+  border-radius:var(--r);
+  padding:12px 16px;
+  font-family:'DM Sans',sans-serif;
+  font-size:16px;color:var(--text-1);
+  transition:border-color .14s;outline:none;width:100%;
+}
+.form-group input:focus{border-color:var(--orange)}
+.form-group input::placeholder{color:var(--text-3)}
+.spam-note{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;
+  letter-spacing:.02em;color:var(--text-3);margin-top:4px;
+}
+#demo-phone{max-width:220px}
+@media(max-width:600px){#demo-phone{max-width:100%}}
+.demo-btn{
+  margin-top:4px;width:100%;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.04em;
+  color:var(--paper);background:var(--orange);
+  padding:14px 24px;
+  border:2px solid var(--orange);border-radius:var(--r);
+  transition:background .14s,color .14s;cursor:pointer;
+}
+.demo-btn:hover,.demo-btn:active{background:transparent;color:var(--orange)}
+.demo-form-footer{
+  margin-top:10px;font-size:11px;color:var(--text-3);
+  font-family:'IBM Plex Mono',monospace;letter-spacing:.04em;
+  text-align:center;
+}
+
+/* iPhone mockup — CSS drawn, no image needed */
+.iphone-wrap{display:flex;justify-content:center;align-items:center}
+.iphone{
+  width:140px;
+  background:#0d1117;
+  border-radius:36px;
+  border:6px solid #1c2531;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.05),
+    0 28px 56px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+  padding:14px 0 18px;position:relative;overflow:hidden;
+}
+.iphone-notch{
+  width:70px;height:18px;background:#0d1117;
+  border-radius:0 0 14px 14px;margin:0 auto 8px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+.iphone-header{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;text-align:center;
+  color:rgba(255,255,255,0.3);margin-bottom:4px;letter-spacing:.06em;
+  padding:0 10px;
+}
+.iphone-contact{
+  font-size:14px;text-align:center;color:rgba(255,255,255,0.85);
+  font-weight:600;font-family:'DM Sans',sans-serif;
+  margin-bottom:10px;padding:0 10px;
+  border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:8px;
+}
+.iphone-screen{
+  padding:0 8px;
+  display:flex;flex-direction:column;gap:4px;
+  min-height:200px;
+}
+.sms-bubble{
+  max-width:85%;padding:6px 10px;
+  border-radius:12px;font-size:11px;line-height:1.4;
+  font-family:'DM Sans',sans-serif;
+}
+.sms-inbound{
+  background:#2c2c2e;color:#fff;align-self:flex-start;
+  border-bottom-left-radius:4px;
+}
+.sms-outbound{
+  background:#0a84ff;color:#fff;align-self:flex-end;
+  border-bottom-right-radius:4px;margin-left:auto;
+}
+.sms-timestamp{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:rgba(255,255,255,0.25);
+  letter-spacing:.04em;margin-top:1px;padding:0 3px;
+}
+.sms-timestamp.right{text-align:right}
+/* Auto-reply — hidden until demo fires */
+.sms-auto{
+  opacity:0;transform:translateY(6px);
+  transition:opacity .4s ease .1s,transform .4s ease .1s;
+}
+.sms-auto.show{opacity:1;transform:none}
+.iphone-placeholder{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:rgba(255,255,255,0.3);
+  letter-spacing:.04em;padding:4px 2px;text-align:center;align-self:center;
+}
+.demo-footer-note{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;color:rgba(255,255,255,0.35);
+  letter-spacing:.04em;text-align:center;margin-top:12px;padding:0 8px;
+}
+.iphone-typing{
+  display:none;padding:8px 12px;
+  background:#2c2c2e;border-radius:14px 14px 4px 14px;
+  align-self:flex-start;width:52px;
+}
+.iphone-typing.show{display:flex;gap:4px;align-items:center}
+.tdot{
+  width:6px;height:6px;border-radius:50%;
+  background:rgba(255,255,255,0.4);
+  animation:tdot 1.2s ease-in-out infinite;
+}
+.tdot:nth-child(2){animation-delay:.2s}
+.tdot:nth-child(3){animation-delay:.4s}
+@keyframes tdot{
+  0%,80%,100%{opacity:.4;transform:scale(1)}
+  40%{opacity:1;transform:scale(1.15)}
+}
+.iphone-home{
+  width:90px;height:4px;background:rgba(255,255,255,0.15);
+  border-radius:2px;margin:12px auto 0;
+}
+
+/* ─────────────────────────────────────────────────────────
+   PRIVACY CALLOUT
+   "// PRIVACY" in orange label. Plain talk. No fluff.
+   Skeptical trades guy will notice it — that's the goal.
+───────────────────────────────────────────────────────── */
+.privacy-section{background:var(--paper);padding:0 20px 56px}
+.privacy-wrap{max-width:var(--max);margin:0 auto}
+.privacy-box{
+  border:1px solid var(--rule);
+  background:var(--paper-3);
+  padding:20px 24px;
+  display:flex;align-items:flex-start;gap:16px;
+}
+.privacy-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--orange);flex-shrink:0;padding-top:2px;white-space:nowrap;
+}
+.privacy-text{
+  font-size:15px;color:var(--text-2);line-height:1.6;margin:0;
+}
+
+/* ─────────────────────────────────────────────────────────
+   PRICING — 3 equal-width cards side by side
+   Middle card: 2px orange border + "RECOMMENDED" badge.
+   "Most Popular" removed — Diego has zero clients, that's
+   a lie by implication. "RECOMMENDED" is honest.
+   Audit fix #12: "From $X setup" language.
+───────────────────────────────────────────────────────── */
+.pricing-section{background:var(--paper-3);position:relative}
+.pricing-intro{
+  font-size:17px;color:var(--text-2);
+  max-width:52ch;margin-bottom:40px;line-height:1.65;
+}
+.pricing-cards{
+  display:grid;grid-template-columns:1fr;
+  gap:16px;
+}
+@media(min-width:700px){
+  .pricing-cards{grid-template-columns:1fr 1fr 1fr;gap:12px;align-items:stretch}
+}
+.price-card{
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  padding:28px;position:relative;
+  display:flex;flex-direction:column;
+}
+/* Middle card — the one to lead with */
+.price-card.featured{
+  border:2px solid var(--orange);
+  background:var(--paper);
+}
+.pc-badge{
+  position:absolute;top:-1px;left:50%;transform:translateX(-50%);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+  background:var(--orange);color:var(--paper);
+  padding:4px 14px;white-space:nowrap;
+}
+.pc-tier{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--text-3);margin-bottom:10px;
+}
+.price-card.featured .pc-tier{color:var(--orange)}
+.pc-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:30px;color:var(--text-1);
+  letter-spacing:.02em;margin-bottom:8px;
+}
+.pc-setup{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-3);margin-bottom:2px;
+}
+.pc-price{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(36px,5vw,48px);
+  color:var(--text-1);line-height:1;margin-bottom:2px;
+}
+.pc-mo{
+  font-family:'DM Sans',sans-serif;
+  font-size:14px;color:var(--text-2);margin-bottom:4px;
+}
+/* FIX 4 — bigger confirmation line (was 10px, now 15px, readable at a glance) */
+.pc-confirm{
+  font-family:'DM Sans',sans-serif;
+  font-size:15px;
+  color:var(--text-2);line-height:1.5;margin-bottom:18px;
+}
+.pc-features{
+  padding-top:18px;border-top:1px solid var(--rule-dim);
+  display:flex;flex-direction:column;gap:11px;flex:1;
+}
+.pc-feature{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:15px;color:var(--text-2);line-height:1.45;
+}
+.pc-dot{
+  width:5px;height:5px;border-radius:50%;flex-shrink:0;
+  margin-top:7px;background:var(--rule);
+}
+.price-card.featured .pc-dot{background:var(--orange)}
+.pc-diego{
+  margin-top:16px;padding-top:12px;
+  border-top:1px solid var(--rule-dim);
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-3);
+}
+.price-card.featured .pc-diego{color:var(--orange)}
+.pc-cta{
+  margin-top:18px;display:block;text-align:center;
+  font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.04em;
+  text-decoration:none;padding:10px 18px;
+  border-radius:var(--r);
+  transition:background .14s,color .14s,border-color .14s;cursor:pointer;
+}
+.price-card:not(.featured) .pc-cta{
+  color:var(--text-2);border:1px solid var(--rule);
+}
+.price-card:not(.featured) .pc-cta:hover{
+  border-color:var(--orange);color:var(--text-1);
+  background:rgba(255,255,255,0.03);
+}
+.price-card.featured .pc-cta{
+  background:var(--orange);color:var(--paper);border:2px solid var(--orange);
+}
+.price-card.featured .pc-cta:hover{background:transparent;color:var(--orange)}
+
+/* Testimonial placeholder slot */
+.testimonial-slot{
+  margin-top:40px;
+  border:1px dashed rgba(110,126,150,0.25);
+  padding:24px;
+}
+.t-todo{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--text-3);margin-bottom:12px;
+}
+.t-quote{font-size:18px;color:var(--text-3);font-style:italic;line-height:1.55;margin-bottom:10px}
+.t-attr{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-3);letter-spacing:.06em}
+
+/* Sheet margin notation for pricing section */
+.pricing-sheet{
+  position:absolute;right:12px;top:80px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(110,126,150,0.25);writing-mode:vertical-rl;
+}
+
+/* ─────────────────────────────────────────────────────────
+   CALCULATOR + "NOT SURE?" HELPER
+   Helper opens inline with a blueprint-unroll animation
+   (scaleY from top + max-height combined).
+   Reassurance copy is non-negotiable — "This just pre-fills
+   the calculator. NOT an upsell."
+   All checkboxes are uncheckable; missed-call text-back is
+   visually recommended and pre-checked but removable.
+───────────────────────────────────────────────────────── */
+.calc-section{background:var(--paper)}
+
+/* Helper trigger */
+.helper-row{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.helper-trigger{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--orange);background:none;
+  border:1px solid var(--orange);
+  padding:10px 18px;border-radius:var(--r);
+  cursor:pointer;transition:background .14s,color .14s;
+}
+.helper-trigger:hover{background:var(--orange-dim)}
+.ht-arrow{transition:transform .3s cubic-bezier(.22,.84,.32,1);display:inline-block}
+.helper-trigger.open .ht-arrow{transform:rotate(90deg)}
+
+/* Blueprint unroll — the helper panel opens like a scroll being unrolled */
+.helper-panel{
+  overflow:hidden;
+  max-height:0;
+  transform-origin:top;
+  transform:scaleY(0.88);
+  opacity:0;
+  transition:
+    max-height .5s cubic-bezier(.25,.1,.25,1),
+    transform .45s cubic-bezier(.25,.1,.25,1),
+    opacity .35s ease;
+}
+.helper-panel.open{
+  max-height:680px;
+  transform:scaleY(1);
+  opacity:1;
+}
+.helper-inner{
+  background:var(--paper-3);
+  border:1px solid var(--rule);
+  border-top:2px solid var(--orange);
+  padding:26px;
+  margin-top:10px;
+  margin-bottom:28px;
+}
+/* The no-upsell reassurance — orange label, impossible to miss */
+.helper-reassurance{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--orange);
+  margin-bottom:20px;
+  padding-bottom:14px;border-bottom:1px solid var(--rule-dim);
+  line-height:1.7;
+}
+.helper-q{
+  font-family:'DM Sans',sans-serif;
+  font-size:16px;color:var(--text-1);font-weight:600;margin-bottom:12px;
+}
+.helper-opts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.helper-opt{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--text-2);background:var(--paper-2);
+  border:1px solid var(--rule);border-radius:var(--r);
+  padding:9px 16px;cursor:pointer;
+  transition:border-color .14s,color .14s,background .14s;
+}
+.helper-opt:hover{border-color:var(--orange);color:var(--text-1)}
+.helper-opt.sel{border-color:var(--orange);color:var(--orange);background:var(--orange-dim)}
+
+/* Helper result — shows which tier is suggested */
+.helper-result{
+  padding-top:14px;border-top:1px solid var(--rule-dim);
+  display:none;
+}
+.helper-result.show{display:block}
+.hr-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:6px;
+}
+.hr-rec{font-size:16px;color:var(--text-1);line-height:1.55}
+
+/* Calculator box */
+.calc-intro{font-size:17px;color:var(--text-2);max-width:52ch;margin-bottom:8px;line-height:1.65}
+.calc-box{
+  background:var(--paper-3);
+  border:1px solid var(--rule);
+  padding:28px;
+}
+.calc-services{display:flex;flex-direction:column;gap:0}
+.cs-row{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:16px 0;border-bottom:1px solid var(--rule-dim);
+  cursor:pointer;
+}
+.cs-row:last-child{border-bottom:none}
+/* Recommended row — orange left accent */
+.cs-row.rec{
+  border-left:3px solid var(--orange);
+  padding-left:14px;margin-left:-17px;
+}
+.cs-row input[type="checkbox"]{
+  width:17px;height:17px;flex-shrink:0;margin-top:3px;
+  accent-color:var(--orange);cursor:pointer;
+}
+.cs-info{flex:1}
+.cs-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:17px;letter-spacing:.02em;color:var(--text-1);
+  margin-bottom:2px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+}
+.cs-rec-badge{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--orange);border:1px solid var(--orange);
+  padding:2px 6px;
+}
+.cs-desc{font-size:13px;color:var(--text-3);line-height:1.5;margin:0}
+.cs-price{text-align:right;flex-shrink:0}
+.cs-mo{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:18px;color:var(--text-2);line-height:1;
+}
+.cs-mo-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;letter-spacing:.1em;color:var(--text-3);
+}
+.cs-setup-price{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;color:var(--text-3);margin-top:2px;
+}
+
+/* Running total */
+.calc-total{
+  margin-top:22px;padding-top:18px;
+  border-top:2px solid var(--orange);
+  display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:flex-start;
+}
+.ct-col{}
+.ct-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--text-3);margin-bottom:4px;
+}
+.ct-val{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:42px;color:var(--text-1);line-height:1;
+}
+.ct-note{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;color:var(--text-3);
+  letter-spacing:.04em;line-height:1.5;margin-top:4px;
+}
+/* CTA after calculator (audit fix #10) */
+.calc-cta-row{margin-top:20px;text-align:center}
+.calc-cta-note{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;color:var(--text-3);
+  letter-spacing:.04em;margin-top:10px;
+}
+
+/* ─────────────────────────────────────────────────────────
+   SERVICES BRIDGE — replaces Full Menu 6-service grid.
+   Audit fix #9: 2 sentences, no grid of cards.
+───────────────────────────────────────────────────────── */
+.bridge-section{background:var(--paper-3)}
+.bridge-box{
+  border:1px solid var(--rule);
+  border-left:3px solid var(--rule);
+  background:var(--paper-2);
+  padding:24px 28px;
+}
+.bridge-box p{font-size:18px;color:var(--text-2);margin:0;line-height:1.65}
+
+/* ─────────────────────────────────────────────────────────
+   FAQ — Common Questions accordion
+───────────────────────────────────────────────────────── */
+.faq-section{background:var(--paper-3);position:relative}
+.faq-list{margin-top:32px}
+.faq-item{border-bottom:1px solid var(--rule-dim)}
+.faq-item:last-child{border-bottom:none}
+.faq-question{
+  width:100%;background:none;border:none;
+  padding:18px 0;text-align:left;cursor:pointer;
+  color:var(--text-1);font-family:'DM Sans',sans-serif;
+  font-size:17px;font-weight:500;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;transition:color .15s;
+}
+.faq-question:hover{color:var(--orange)}
+.faq-icon{
+  font-family:'IBM Plex Mono',monospace;
+  color:var(--orange);font-size:16px;
+  flex-shrink:0;transition:transform .3s ease;
+}
+.faq-question.open .faq-icon{transform:rotate(45deg)}
+.faq-answer{
+  max-height:0;overflow:hidden;
+  transition:max-height .35s ease,padding .25s ease;
+}
+.faq-answer.open{max-height:500px;padding:0 0 22px 0}
+.faq-answer p{
+  font-size:16px;color:var(--text-2);
+  line-height:1.65;margin:0;max-width:65ch;
+}
+
+/* ─────────────────────────────────────────────────────────
+   ABOUT — Big V founder portrait block
+   No photo needed. The V IS the identity.
+   Corner brackets + dimension line under V baseline.
+   "∠ 67°" angle annotation on the left stroke.
+───────────────────────────────────────────────────────── */
+.about-section{background:var(--paper-2)}
+.about-layout{display:grid;grid-template-columns:1fr;gap:40px}
+@media(min-width:640px){
+  .about-layout{grid-template-columns:280px 1fr;align-items:start}
+}
+/* V portrait frame — the brand mark as founder identity */
+.v-portrait{
+  width:100%;max-width:280px;
+  border:1px solid var(--rule);
+  padding:20px 20px 16px;
+  position:relative;background:var(--paper-3);
+}
+/* Corner brackets — drafting registration marks */
+.v-portrait::before{
+  content:'';position:absolute;top:-2px;left:-2px;
+  width:16px;height:16px;
+  border-top:2px solid rgba(110,126,150,0.4);
+  border-left:2px solid rgba(110,126,150,0.4);
+}
+.v-portrait::after{
+  content:'';position:absolute;bottom:-2px;right:-2px;
+  width:16px;height:16px;
+  border-bottom:2px solid rgba(110,126,150,0.4);
+  border-right:2px solid rgba(110,126,150,0.4);
+}
+.vp-corner-tr{
+  position:absolute;top:-2px;right:-2px;
+  width:16px;height:16px;
+  border-top:2px solid rgba(110,126,150,0.4);
+  border-right:2px solid rgba(110,126,150,0.4);
+}
+.vp-corner-bl{
+  position:absolute;bottom:-2px;left:-2px;
+  width:16px;height:16px;
+  border-bottom:2px solid rgba(110,126,150,0.4);
+  border-left:2px solid rgba(110,126,150,0.4);
+}
+.v-svg-wrap{position:relative}
+/* Dimension line under the V baseline — measurement ticks */
+.vp-dim{
+  display:flex;align-items:center;gap:0;margin-top:4px;
+}
+.vp-dim-tick{
+  width:1px;height:8px;background:rgba(110,126,150,0.3);flex-shrink:0;
+}
+.vp-dim-line{flex:1;height:1px;background:rgba(110,126,150,0.2)}
+.vp-dim-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:8px;color:rgba(110,126,150,0.35);
+  letter-spacing:.08em;text-align:center;margin-top:3px;
+}
+.vp-brand{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:18px;letter-spacing:.1em;
+  color:var(--text-1);text-align:center;margin-top:10px;line-height:1;
+}
+.vp-est{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--text-3);text-align:center;margin-top:4px;
+}
+.vp-founder{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--text-3);text-align:center;
+  margin-top:8px;padding-top:8px;
+  border-top:1px solid var(--rule-dim);
+}
+/* Sheet notation for about section */
+.about-sheet{
+  position:absolute;left:0;top:50%;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(110,126,150,0.2);writing-mode:vertical-rl;
+  margin-left:-2px;
+}
+
+.about-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(28px,5vw,40px);
+  color:var(--text-1);letter-spacing:.02em;margin-bottom:4px;
+}
+.about-role{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:20px;
+}
+.about-tagline{
+  font-size:21px;color:var(--text-1);
+  font-weight:500;line-height:1.4;margin-bottom:18px;
+}
+.about-body{font-size:17px;color:var(--text-2);line-height:1.7}
+
+/* ─────────────────────────────────────────────────────────
+   FINAL CTA — "Let's plug the leak."
+   Headline "LEAK" in orange. The earned metaphor stays.
+───────────────────────────────────────────────────────── */
+.cta-section{background:var(--paper-3)}
+.cta-box{
+  background:var(--orange-dim);
+  border:1px solid rgba(237,139,47,0.22);
+  padding:52px 36px;text-align:center;
+}
+.cta-box h2{margin-bottom:14px}
+.cta-box > p{
+  font-size:19px;max-width:48ch;margin:0 auto 32px;
+  color:var(--text-1);
+}
+.cta-actions{
+  display:flex;flex-wrap:wrap;gap:12px;
+  justify-content:center;align-items:center;margin-bottom:22px;
+}
+.cta-or{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3);
+}
+.cta-reach-link{
+  flex-basis:100%;text-align:center;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;letter-spacing:.08em;color:var(--text-3);
+  margin-top:-2px;
+}
+.cta-contacts{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:16px}
+.cta-contact{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;
+  color:var(--text-2);text-decoration:none;
+  padding:9px 18px;border:1px solid var(--rule);border-radius:var(--r);
+  transition:border-color .14s,color .14s;
+}
+.cta-contact:hover{border-color:var(--orange);color:var(--text-1)}
+.cta-area{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;color:var(--text-3);letter-spacing:.06em;
+}
+
+/* FOOTER */
+footer{
+  background:var(--paper-2);
+  border-top:1px solid var(--rule-dim);
+  padding:36px 20px;
+}
+.footer-inner{
+  max-width:var(--max);margin:0 auto;
+  display:flex;justify-content:space-between;align-items:flex-end;
+  flex-wrap:wrap;gap:18px;
+}
+.footer-brand{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:24px;letter-spacing:.04em;color:var(--text-1);
+  line-height:1;margin-bottom:6px;
+}
+.footer-tagline{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--text-3);
+}
+.footer-right{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-3);text-align:right;line-height:1.9;
+}
+.footer-right a{color:var(--text-3);text-decoration:none}
+.footer-right a:hover{color:var(--text-2)}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  body{font-size:18px}
+  section{padding:56px 16px}
+  .hero{padding:68px 16px 48px}
+  .hero-stats{gap:20px}
+  .title-block{display:none}
+  .demo-layout{gap:28px}
+  .iphone{width:130px}
+  .iphone-screen{min-height:180px}
+  .pricing-cards{grid-template-columns:1fr}
+  .price-card.featured{order:-1}
+  .about-layout{grid-template-columns:1fr}
+  .v-portrait{max-width:240px;margin:0 auto}
+  .calc-box{padding:20px 16px}
+  .cta-box{padding:36px 18px}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+  .footer-right{text-align:left}
+  .cs-row.rec{padding-left:12px;margin-left:-15px}
+  .sheet-margin-note{display:none}
+  .pricing-sheet{display:none}
+}
+
+/* FIX 5 — Section parallax layers (Pricing + About) */
+.sec-para-layer{
+  position:absolute;inset:0;overflow:hidden;
+  pointer-events:none;z-index:0;
+}
+.sec-para-layer .para-grid{
+  position:absolute;inset:-30% 0;
+  will-change:transform;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);
+  background-size:80px 80px;
+}
+
+/* FIX 7 — Calculator price promise callout */
+.calc-promise{
+  margin-bottom:20px;padding:14px 20px;
+  border-left:2px solid var(--orange);
+  background:var(--orange-dim);
+  font-size:14px;
+  color:var(--text-2);line-height:1.6;
+}
+.cp-label{
+  display:block;
+  font-family:'IBM Plex Mono',monospace;
+  color:var(--orange);letter-spacing:.18em;text-transform:uppercase;
+  font-size:10px;margin-bottom:5px;
+}
+
+/* FIX 6 — Calculator service group headers */
+.calc-group{margin-bottom:4px}
+.calc-group:not(:first-child){margin-top:28px;padding-top:24px;border-top:1px solid var(--rule-dim)}
+.cg-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:8px;padding-bottom:8px;
+  border-bottom:1px solid var(--rule-dim);
+  display:flex;align-items:center;gap:8px;
+}
+
+/* CHANGE 1 — About stacked wordmark (replaces V portrait) */
+.about-stacked-wordmark{
+  position:relative;
+  display:flex;flex-direction:column;align-items:center;
+  padding:40px 32px;border:1px solid var(--rule);overflow:hidden;
+}
+.about-stacked-wordmark::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px);
+  background-size:80px 80px;
+}
+.awm-corner-tr{
+  position:absolute;top:10px;right:10px;width:18px;height:18px;
+  border-top:1.5px solid var(--orange);border-right:1.5px solid var(--orange);
+  pointer-events:none;
+}
+.awm-corner-bl{
+  position:absolute;bottom:10px;left:10px;width:18px;height:18px;
+  border-bottom:1.5px solid var(--orange);border-left:1.5px solid var(--orange);
+  pointer-events:none;
+}
+.awm-inner{
+  position:relative;z-index:1;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.awm-valdes{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(60px,10vw,88px);
+  letter-spacing:.04em;color:var(--text-1);line-height:1;
+}
+.awm-divider{
+  width:100%;max-width:240px;height:12px;display:block;flex-shrink:0;
+}
+.awm-systems{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(36px,6vw,54px);
+  letter-spacing:.24em;color:var(--text-1);line-height:1;
+}
+.awm-dim-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-3);margin-top:18px;position:relative;z-index:1;
+}
+
+/* CHANGE 5 — Calculator 2-column desktop layout */
+.calc-layout{
+  display:grid;
+  grid-template-columns:1fr 300px;
+  align-items:start;
+}
+.calc-services-col{
+  padding-right:28px;
+  border-right:1px solid var(--rule-dim);
+}
+.calc-estimate-col{
+  padding-left:28px;
+}
+.calc-estimate-panel{
+  position:sticky;
+  top:100px;
+}
+.calc-estimate-promise{
+  margin-top:16px;padding:12px 14px;
+  border-left:2px solid var(--orange);
+  background:var(--orange-dim);
+  font-size:12px;color:var(--text-2);line-height:1.6;
+}
+@media(max-width:900px){
+  .calc-layout{grid-template-columns:1fr}
+  .calc-services-col{
+    border-right:none;border-bottom:1px solid var(--rule-dim);
+    padding-right:0;padding-bottom:24px;margin-bottom:24px;
   }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:'Sora',sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
-  h1,h2,h3,.display{font-family:'Saira Condensed',sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1.02}
-  .mono{font-family:'Azeret Mono',monospace}
+  .calc-estimate-col{padding-left:0}
+  .calc-estimate-panel{position:static}
+}
 
-  /* blueprint dimension line component */
-  .dim{display:flex;align-items:center;gap:0;font-family:'Azeret Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin:0 auto}
-  .dim .ln{height:1px;background:var(--orange);flex:1;position:relative}
-  .dim .ln::before,.dim .ln::after{content:"";position:absolute;top:50%;width:1px;height:9px;background:var(--orange)}
-  .dim .ln.l::before{left:0;transform:translateY(-50%)}
-  .dim .ln.l::after{left:0;transform:translateY(-50%) rotate(0)}
-  .dim .ln.l{margin-right:10px}
-  .dim .ln.r{margin-left:10px}
-  .dim .ln.l::after{left:0;width:7px;height:1px;transform:rotate(45deg);transform-origin:left}
-  .dim .arrowL,.dim .arrowR{width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent}
-  .dim .arrowL{border-right:7px solid var(--orange)}
-  .dim .arrowR{border-left:7px solid var(--orange)}
-  .dim-wrap{display:flex;align-items:center;gap:0;max-width:340px;margin:0 auto 14px}
-  .dim-wrap .seg{height:1px;background:var(--orange);flex:1}
-  .dim-wrap .lbl{font-family:'Azeret Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);padding:0 12px;white-space:nowrap}
+/* CHANGE 2 — Multi-layer depth parallax containers */
+.para-midground,.para-closeground{
+  position:absolute;inset:-15% 0;pointer-events:none;
+}
+/* Section-layer B marks: dimmer than hero Layer B */
+.para-midground .anno{color:rgba(180,193,212,0.12)}
+/* Section-layer C marks: slightly closer, slightly brighter */
+.anno-lg{
+  position:absolute;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(180,193,212,0.20);white-space:nowrap;
+}
 
-  /* header */
-  header{position:sticky;top:0;z-index:50;background:var(--navy);border-bottom:3px solid var(--orange)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
-  .brand{display:flex;align-items:center;gap:12px;color:var(--white);font-family:'Saira Condensed';font-weight:700;font-size:24px;text-transform:uppercase;letter-spacing:.03em}
-  .brand .mark{width:38px;height:38px;display:grid;place-items:center}
-  .brand .mark svg{width:100%;height:100%}
-  .nav-links{display:flex;gap:28px;align-items:center}
-  .nav-links a{color:#cdd6e4;text-decoration:none;font-size:14px;font-weight:500;transition:.2s}
-  .nav-links a:hover{color:var(--orange)}
-  .nav a.cta{background:var(--orange);color:var(--white);font-family:'Saira Condensed';font-weight:600;text-transform:uppercase;letter-spacing:.04em;padding:11px 22px;font-size:15px}
-  .nav a.cta:hover{background:var(--safety);color:var(--ink)}
-  @media(max-width:760px){.nav-links a:not(.cta){display:none}}
+/* CHANGE 3 — Reverse-scroll floaters: will-change managed by JS */
+[data-reverse-scroll]{will-change:auto}
 
-  /* hero — full blueprint sheet */
-  .hero{position:relative;background:var(--blueprint);color:var(--white);padding:120px 0 130px;overflow:hidden}
-  .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--bp-line) 1px,transparent 1px),linear-gradient(90deg,var(--bp-line) 1px,transparent 1px);background-size:32px 32px}
-  .hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--bp-line-strong) 1px,transparent 1px),linear-gradient(90deg,var(--bp-line-strong) 1px,transparent 1px);background-size:160px 160px}
-  /* sheet border + corner ticks */
-  .sheet-border{position:absolute;inset:18px;border:1.5px solid var(--bp-line-strong);pointer-events:none;z-index:1}
-  .sheet-border span{position:absolute;width:14px;height:14px;border:1.5px solid var(--orange)}
-  .sheet-border .tl{top:-1px;left:-1px;border-right:none;border-bottom:none}
-  .sheet-border .tr{top:-1px;right:-1px;border-left:none;border-bottom:none}
-  .sheet-border .bl{bottom:-1px;left:-1px;border-right:none;border-top:none}
-  .sheet-border .br{bottom:-1px;right:-1px;border-left:none;border-top:none}
-  .hero .wrap{position:relative;z-index:2}
-  .kicker{display:inline-flex;align-items:center;gap:9px;font-family:'Azeret Mono',monospace;text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:var(--orange);font-weight:500;margin-bottom:26px;border-left:3px solid var(--orange);padding-left:13px}
-  .hero h1{font-size:clamp(40px,6.6vw,80px);font-weight:700;max-width:15ch;margin-bottom:24px}
-  .hero h1 em{color:var(--orange);font-style:normal}
-  .hero p.lead{font-size:clamp(17px,2.1vw,21px);max-width:55ch;color:#c4cee0;margin-bottom:38px}
-  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
-  .btn{font-family:'Saira Condensed';text-transform:uppercase;letter-spacing:.04em;font-weight:600;font-size:16px;padding:16px 30px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:.2s;cursor:pointer;border:none}
-  .btn-orange{background:var(--orange);color:var(--white)}
-  .btn-orange:hover{background:var(--safety);color:var(--ink);transform:translateY(-2px)}
-  .btn-ghost{background:transparent;color:var(--white);border:2px solid var(--steel)}
-  .btn-ghost:hover{border-color:var(--orange);color:var(--orange)}
-  .hero-proof{margin-top:48px;display:flex;gap:36px;flex-wrap:wrap;border-top:1px solid var(--bp-line-strong);padding-top:26px}
-  .hero-proof div{font-size:14px;color:#aab6cb}
-  .hero-proof strong{display:block;font-family:'Saira Condensed';font-size:32px;color:var(--orange);font-weight:700}
-  /* title block bottom-right like a real blueprint */
-  .titleblock{position:absolute;bottom:30px;right:30px;z-index:3;border:1.5px solid var(--bp-line-strong);background:rgba(10,25,42,.6);font-family:'Azeret Mono',monospace;font-size:10px;color:#9fb4cc;letter-spacing:.08em;display:grid;grid-template-columns:auto auto;backdrop-filter:blur(2px)}
-  .titleblock div{padding:6px 12px;border:.5px solid var(--bp-line)}
-  .titleblock .k{color:#6f8198}
-  .titleblock .v{color:var(--orange)}
-  @media(max-width:760px){.titleblock{display:none}}
+/* Mobile — disable depth layers B & C + reverse-scroll, reduce reveal scale */
+@media(max-width:640px){
+  .para-midground,.para-closeground{display:none}
+  [data-reverse-scroll]{transform:none !important;will-change:auto}
+  .reveal{transform:translateY(14px) scale(0.98)}
+}
 
-  .strip{background:var(--orange);color:var(--white);padding:22px 0}
-  .strip .wrap{display:flex;align-items:center;gap:18px;justify-content:center;text-align:center;flex-wrap:wrap}
-  .strip p{font-family:'Saira Condensed';text-transform:uppercase;font-weight:600;font-size:clamp(15px,2vw,19px);letter-spacing:.02em}
+/* REDUCED MOTION — parallax and all animations off */
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1 !important;transform:none !important;transition:none !important}
+  .hero-layer-a,.hero-layer-b{transform:none !important;will-change:auto}
+  .sec-para-layer .para-grid{will-change:auto}
+  .para-midground,.para-closeground{transform:none !important;will-change:auto}
+  [data-reverse-scroll]{transform:none !important;will-change:auto}
+  .helper-panel{transition:none !important}
+  .sms-auto{transition:none !important}
+  .tdot{animation:none}
+}
 
-  section.block{padding:88px 0;position:relative}
-  .sec-head{margin-bottom:14px;max-width:62ch}
-  .sec-head .tag{font-family:'Azeret Mono',monospace;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:var(--orange-deep);font-weight:500;margin-bottom:14px}
-  .sec-head h2{font-size:clamp(30px,4.2vw,48px);font-weight:700;margin-bottom:16px}
-  .sec-head p{font-size:17px;color:#4a5365}
-  .sec-ref{position:absolute;top:34px;right:28px;font-family:'Azeret Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
-  .sec-ref::before{content:"";display:inline-block;width:22px;height:1px;background:var(--muted);vertical-align:middle;margin-right:8px}
-  @media(max-width:760px){.sec-ref{display:none}}
-
-  /* live demo section */
-  .demo-sec{background:var(--blueprint);color:#fff;position:relative;overflow:hidden}
-  .demo-sec::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--bp-line) 1px,transparent 1px),linear-gradient(90deg,var(--bp-line) 1px,transparent 1px);background-size:34px 34px}
-  .demo-sec .wrap{position:relative;z-index:1}
-  .demo-sec .sec-head h2{color:#fff}
-  .demo-sec .sec-head p{color:#aeb9cc}
-  .demo-sec .sec-head .tag{color:var(--orange)}
-  .demo-grid{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:center;margin-top:20px}
-  @media(max-width:820px){.demo-grid{grid-template-columns:1fr;gap:36px;justify-items:center}}
-  .demo-controls{max-width:440px}
-  .demo-controls .field{margin-bottom:16px}
-  .demo-controls label{display:block;font-family:'Azeret Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
-  .demo-controls input{width:100%;background:rgba(255,255,255,.06);border:1.5px solid var(--steel);color:#fff;padding:13px 15px;font-family:'Sora';font-size:15px;outline:none;transition:.15s}
-  .demo-controls input:focus{border-color:var(--orange)}
-  .demo-controls input::placeholder{color:#6f8198}
-  .demo-btn{width:100%;background:var(--orange);color:#fff;border:none;font-family:'Saira Condensed';text-transform:uppercase;letter-spacing:.04em;font-weight:600;font-size:17px;padding:16px;cursor:pointer;transition:.2s;margin-top:6px}
-  .demo-btn:hover{background:var(--safety);color:var(--ink)}
-  .demo-btn:disabled{opacity:.5;cursor:not-allowed}
-  .demo-status{font-family:'Azeret Mono',monospace;font-size:13px;color:#aeb9cc;margin-top:18px;min-height:20px;letter-spacing:.04em}
-  .demo-status .live{color:var(--orange)}
-  /* phone mockup */
-  .phone{width:300px;height:600px;background:#0a1420;border:10px solid #1c2b3d;border-radius:38px;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4);flex-shrink:0}
-  .phone .notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:130px;height:26px;background:#1c2b3d;border-radius:0 0 16px 16px;z-index:5}
-  .phone .screen{position:absolute;inset:0;padding:44px 16px 16px;display:flex;flex-direction:column}
-  .phone .ptime{text-align:center;font-family:'Sora';font-size:13px;color:#7e8aa0;margin-bottom:14px}
-  /* incoming call overlay */
-  .callscreen{position:absolute;inset:0;background:linear-gradient(180deg,#0f2236,#0a1420);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:90px;opacity:0;pointer-events:none;transition:.4s;z-index:4}
-  .callscreen.show{opacity:1}
-  .callscreen .who{font-family:'Saira Condensed';font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#7e8aa0;margin-bottom:8px}
-  .callscreen .num{font-family:'Sora';font-size:26px;font-weight:600;color:#fff;margin-bottom:6px}
-  .callscreen .sub{font-size:13px;color:#7e8aa0}
-  .callscreen .avatar{width:96px;height:96px;border-radius:50%;background:#1c2b3d;margin:24px 0;display:grid;place-items:center;color:#7e8aa0;font-size:38px}
-  .callscreen .ring{animation:ringpulse 1s infinite}
-  @keyframes ringpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
-  .callscreen .actions{margin-top:auto;margin-bottom:50px;display:flex;gap:60px}
-  .callscreen .act{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-size:26px}
-  .callscreen .decline{background:#e5484d}
-  .callscreen .accept{background:#30a46c}
-  /* messages view */
-  .msgs{flex:1;display:flex;flex-direction:column;gap:10px;overflow:hidden}
-  .msg-hd{text-align:center;border-bottom:1px solid #1c2b3d;padding-bottom:10px;margin-bottom:8px}
-  .msg-hd .mname{font-family:'Sora';font-weight:600;font-size:15px;color:#fff}
-  .msg-hd .mnum{font-size:12px;color:#7e8aa0}
-  .bubble{max-width:80%;padding:11px 14px;border-radius:16px;font-size:13.5px;line-height:1.4;opacity:0;transform:translateY(10px);transition:.4s}
-  .bubble.show{opacity:1;transform:none}
-  .bubble.them{background:#1c2b3d;color:#e8eef6;align-self:flex-start;border-bottom-left-radius:4px}
-  .bubble.you{background:var(--orange);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
-  .bubble .tstamp{display:block;font-size:10px;opacity:.6;margin-top:4px}
-  .typing{align-self:flex-end;background:#1c2b3d;padding:12px 16px;border-radius:16px;opacity:0;transition:.3s}
-  .typing.show{opacity:1}
-  .typing span{display:inline-block;width:7px;height:7px;border-radius:50%;background:#7e8aa0;margin:0 2px;animation:blink 1.2s infinite}
-  .typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
-  @keyframes blink{0%,60%,100%{opacity:.3}30%{opacity:1}}
-
-  .how{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid var(--navy);margin-top:34px}
-  .how .step{padding:36px 30px;border-right:2px solid var(--navy);background:var(--white);position:relative}
-  .how .step:last-child{border-right:none}
-  .how .num{font-family:'Saira Condensed';font-size:56px;font-weight:700;color:var(--line);line-height:1;margin-bottom:14px}
-  .how .step h3{font-size:22px;font-weight:600;margin-bottom:10px;color:var(--navy)}
-  .how .step p{font-size:15px;color:#4a5365}
-  @media(max-width:760px){.how{grid-template-columns:1fr}.how .step{border-right:none;border-bottom:2px solid var(--navy)}.how .step:last-child{border-bottom:none}}
-
-  .pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
-  .pkg{background:var(--white);border:2px solid var(--navy);display:flex;flex-direction:column;position:relative;transition:.25s}
-  .pkg:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(15,31,51,.12)}
-  .pkg.feat{border-color:var(--orange);box-shadow:10px 10px 0 var(--orange)}
-  .pkg.feat:hover{box-shadow:10px 10px 0 var(--orange),0 18px 40px rgba(246,131,31,.2)}
-  .pkg .ph{padding:28px 26px 20px;border-bottom:2px solid var(--navy)}
-  .pkg.feat .ph{border-color:var(--orange)}
-  .pkg .badge{position:absolute;top:-14px;right:20px;background:var(--orange);color:var(--white);font-family:'Saira Condensed';text-transform:uppercase;font-size:12px;font-weight:700;letter-spacing:.08em;padding:6px 13px}
-  .pkg h3{font-size:25px;font-weight:700;margin-bottom:4px;color:var(--navy)}
-  .pkg .sub{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-family:'Saira Condensed';margin-bottom:16px}
-  .pkg .price{font-family:'Saira Condensed';font-weight:700;font-size:36px;line-height:1;color:var(--ink)}
-  .pkg .price small{display:block;font-size:14px;color:#4a5365;font-weight:500;margin-top:6px;letter-spacing:0;font-family:'Sora'}
-  .pkg ul{list-style:none;padding:24px 26px;flex:1}
-  .pkg li{font-size:14.5px;padding:9px 0 9px 26px;position:relative;border-bottom:1px solid var(--line)}
-  .pkg li:last-child{border-bottom:none}
-  .pkg li::before{content:"\2713";position:absolute;left:0;top:8px;color:var(--orange);font-weight:800}
-  .pkg .pf{padding:0 26px 26px}
-  .pkg .pf a{display:block;text-align:center;background:var(--navy);color:var(--white);font-family:'Saira Condensed';text-transform:uppercase;letter-spacing:.04em;font-weight:600;padding:14px;text-decoration:none;transition:.2s;font-size:16px}
-  .pkg.feat .pf a{background:var(--orange)}
-  .pkg .pf a:hover{background:var(--orange-deep);color:#fff}
-  @media(max-width:860px){.pkgs{grid-template-columns:1fr;max-width:430px;margin:34px auto 0}}
-
-  .builder{margin-top:30px;border:2px solid var(--navy);background:var(--white);display:grid;grid-template-columns:1.4fr .9fr}
-  .builder .bl{padding:34px;border-right:2px solid var(--navy)}
-  .builder .bl h3{font-size:26px;font-weight:700;color:var(--navy);margin-bottom:6px}
-  .builder .bl>p{font-size:15px;color:#4a5365;margin-bottom:24px}
-  .svc{display:flex;align-items:flex-start;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);cursor:pointer;user-select:none}
-  .svc:last-child{border-bottom:none}
-  .svc .box{flex:0 0 24px;width:24px;height:24px;border:2px solid var(--steel);margin-top:2px;display:grid;place-items:center;transition:.15s;background:var(--white)}
-  .svc.on .box{background:var(--orange);border-color:var(--orange)}
-  .svc .box svg{width:14px;height:14px;opacity:0;transition:.15s}
-  .svc.on .box svg{opacity:1}
-  .svc .info{flex:1}
-  .svc .info .nm{font-family:'Saira Condensed';text-transform:uppercase;font-weight:600;font-size:16px;letter-spacing:.02em;color:var(--ink)}
-  .svc .info .ds{font-size:13px;color:#6b7585;margin-top:2px}
-  .svc .pr{text-align:right;font-size:13px;color:var(--orange-deep);font-weight:600;white-space:nowrap;font-family:'Azeret Mono',monospace}
-  .builder .br{padding:34px;background:var(--blueprint);color:var(--white);display:flex;flex-direction:column;position:relative;overflow:hidden}
-  .builder .br::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--bp-line) 1px,transparent 1px),linear-gradient(90deg,var(--bp-line) 1px,transparent 1px);background-size:26px 26px}
-  .builder .br>*{position:relative;z-index:1}
-  .builder .br h4{font-family:'Azeret Mono',monospace;text-transform:uppercase;letter-spacing:.1em;font-size:13px;color:var(--orange);margin-bottom:18px}
-  .cart-list{flex:1;min-height:120px}
-  .cart-empty{color:#8a97ac;font-size:14px;font-style:italic;padding:8px 0}
-  .cart-row{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;padding:7px 0;border-bottom:1px solid var(--bp-line);color:#d4dcea}
-  .cart-row span:last-child{color:#fff;white-space:nowrap;font-family:'Azeret Mono',monospace}
-  .totals{border-top:2px solid var(--orange);margin-top:14px;padding-top:16px}
-  .totals .tr{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
-  .totals .tr .lab{font-size:14px;color:#aeb9cc}
-  .totals .tr .val{font-family:'Saira Condensed';font-weight:700;font-size:30px;color:var(--white)}
-  .totals .tr .val small{font-size:14px;color:var(--orange);font-family:'Sora';font-weight:500}
-  .totals .note{font-size:11.5px;color:#8a97ac;margin-top:6px;line-height:1.45}
-  .builder .br .btn-orange{margin-top:20px;justify-content:center;width:100%}
-  .bundle-hint{background:rgba(246,131,31,.15);border:1px solid var(--orange);color:var(--safety);font-size:12.5px;padding:10px 12px;margin-top:14px;display:none}
-  .bundle-hint.show{display:block}
-  @media(max-width:820px){.builder{grid-template-columns:1fr}.builder .bl{border-right:none;border-bottom:2px solid var(--navy)}}
-
-  .about{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;margin-top:20px}
-  .about .photo{background:var(--blueprint);aspect-ratio:4/5;position:relative;overflow:hidden;border:2px solid var(--navy)}
-  .about .photo::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--bp-line) 1px,transparent 1px),linear-gradient(90deg,var(--bp-line) 1px,transparent 1px);background-size:30px 30px}
-  .about .photo .tool{position:absolute;top:46%;left:50%;transform:translate(-50%,-50%);font-family:'Saira Condensed';font-size:72px;color:var(--steel);font-weight:700;text-align:center;line-height:.9}
-  .about .photo .ph-label{position:absolute;bottom:0;left:0;right:0;padding:20px;color:var(--orange);font-family:'Azeret Mono',monospace;text-transform:uppercase;letter-spacing:.06em;font-size:11px;border-top:1px solid var(--bp-line-strong)}
-  .about h2{font-size:clamp(28px,3.8vw,42px);font-weight:700;margin-bottom:18px;color:var(--navy)}
-  .about p{font-size:16.5px;color:#3f4856;margin-bottom:16px}
-  .about .sig{font-family:'Saira Condensed';font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--navy);margin-top:8px;border-left:3px solid var(--orange);padding-left:13px}
-  @media(max-width:780px){.about{grid-template-columns:1fr;gap:30px}.about .photo{max-width:320px}}
-
-  .menu-sec{background:var(--navy-2);position:relative;overflow:hidden}
-  .menu-sec::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--bp-line) 1px,transparent 1px),linear-gradient(90deg,var(--bp-line) 1px,transparent 1px);background-size:40px 40px;opacity:.6}
-  .menu-sec .wrap{position:relative}
-  .menu-sec .sec-head h2{color:var(--white)}
-  .menu-sec .sec-head p{color:#aeb9cc}
-  .menu-sec .sec-head .tag{color:var(--orange)}
-  .menu{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dk);border:1px solid var(--line-dk);margin-top:34px}
-  .menu .item{background:var(--navy-2);padding:26px}
-  .menu .item .ic{color:var(--orange);font-family:'Azeret Mono',monospace;font-weight:600;font-size:13px;letter-spacing:.1em;margin-bottom:10px}
-  .menu .item h3{font-size:18px;font-weight:600;margin-bottom:7px;color:var(--white)}
-  .menu .item p{font-size:14px;color:#9aa6bb}
-  @media(max-width:860px){.menu{grid-template-columns:1fr 1fr}}
-  @media(max-width:520px){.menu{grid-template-columns:1fr}}
-
-  .contact{background:var(--blueprint);color:var(--white);text-align:center;position:relative;overflow:hidden}
-  .contact::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--bp-line) 1px,transparent 1px),linear-gradient(90deg,var(--bp-line) 1px,transparent 1px);background-size:34px 34px}
-  .contact::after{content:"";position:absolute;bottom:-30%;left:-8%;width:520px;height:520px;background:radial-gradient(circle,rgba(246,131,31,.16),transparent 70%);pointer-events:none}
-  .contact .wrap{position:relative;z-index:1}
-  .contact h2{font-size:clamp(32px,5vw,58px);font-weight:700;margin-bottom:18px}
-  .contact h2 em{color:var(--orange);font-style:normal}
-  .contact p{font-size:18px;color:#c4cee0;max-width:52ch;margin:0 auto 36px}
-  .contact .hero-cta{justify-content:center}
-  .contact .reach{margin-top:34px;font-family:'Azeret Mono',monospace;text-transform:uppercase;letter-spacing:.04em;font-size:13px;color:#aeb9cc}
-
-  footer{background:var(--ink);color:#6b7585;padding:36px 0;font-size:13px}
-  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center}
-  footer .brand{font-size:19px;color:var(--white);font-family:'Saira Condensed';text-transform:uppercase;letter-spacing:.03em}
-  footer .mono{font-size:11px;letter-spacing:.08em}
-
-  /* replay-on-scroll animations */
-  .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
-  .reveal.in{opacity:1;transform:none}
-  .reveal.d1{transition-delay:.07s}.reveal.d2{transition-delay:.14s}
-
-  /* subtle paper texture + drafting marks for light sections */
-  .paper-tex{position:relative}
-  .paper-tex::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
-    background-image:
-      radial-gradient(circle at 12% 20%,rgba(15,31,51,.025),transparent 8%),
-      radial-gradient(circle at 88% 70%,rgba(15,31,51,.025),transparent 9%),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cpath d='M0 40 Q80 10 160 40' fill='none' stroke='%230f1f33' stroke-opacity='0.03' stroke-width='1'/%3E%3Cpath d='M0 110 Q80 80 160 110' fill='none' stroke='%23f6831f' stroke-opacity='0.04' stroke-width='1'/%3E%3Ccircle cx='130' cy='30' r='26' fill='none' stroke='%230f1f33' stroke-opacity='0.025' stroke-width='1'/%3E%3C/svg%3E");
-    background-size:auto,auto,300px 300px;opacity:.9}
-  .paper-tex .wrap{position:relative;z-index:1}
-
-  /* who-it's-for band */
-  .trades{background:var(--navy);color:var(--white);padding:46px 0;position:relative;overflow:hidden}
-  .trades::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--bp-line) 1px,transparent 1px),linear-gradient(90deg,var(--bp-line) 1px,transparent 1px);background-size:30px 30px;opacity:.5}
-  .trades .wrap{position:relative}
-  .trades .lead-line{font-family:'Azeret Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:18px;text-align:center}
-  .trades h3{text-align:center;font-size:clamp(20px,2.8vw,30px);font-weight:700;color:var(--white);margin-bottom:26px;letter-spacing:.01em}
-  .trades h3 em{color:var(--orange);font-style:normal}
-  .trade-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:880px;margin:0 auto}
-  .trade-tags span{font-family:'Saira Condensed';text-transform:uppercase;letter-spacing:.04em;font-weight:600;font-size:15px;color:#cdd6e4;border:1px solid var(--steel);padding:8px 16px}
-  .trade-tags span.more{color:var(--orange);border-color:var(--orange)}
+/* ─────────────────────────────────────────────────────────
+   LEGAL MODALS — Privacy + Terms
+───────────────────────────────────────────────────────── */
+.legal-modal{position:fixed;inset:0;z-index:1000;display:none;opacity:0;transition:opacity .3s ease}
+.legal-modal.open{display:block;opacity:1}
+.legal-modal-overlay{position:absolute;inset:0;background:rgba(10,37,64,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:pointer}
+.legal-modal-content{position:absolute;inset:0;background:var(--paper);display:flex;flex-direction:column;overflow-y:auto}
+.modal-nav{position:sticky;top:0;background:rgba(10,37,64,0.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:2px solid var(--orange);z-index:10}
+.legal-modal-close{position:fixed;top:100px;right:24px;background:var(--paper-2);border:1px solid var(--rule);color:var(--text-1);width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:18px;line-height:1;z-index:11;transition:background .15s,border-color .15s}
+.legal-modal-close:hover{background:var(--orange);border-color:var(--orange);color:var(--paper)}
+.legal-modal-body{max-width:720px;margin:0 auto;padding:60px 24px 100px;width:100%}
+.legal-modal-body h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,7vw,64px);color:var(--text-1);letter-spacing:.01em;line-height:.94;margin-bottom:10px}
+.legal-modal-body .legal-meta{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--orange);letter-spacing:.2em;text-transform:uppercase;margin-bottom:32px}
+.legal-modal-body .legal-lead{font-size:18px;color:var(--text-1);line-height:1.6;margin-bottom:18px;padding:16px 20px;border-left:3px solid var(--orange);background:var(--orange-dim)}
+.legal-modal-body h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,4vw,32px);color:var(--text-1);letter-spacing:.02em;margin-top:40px;margin-bottom:16px}
+.legal-modal-body p{font-size:17px;color:var(--text-2);line-height:1.7;margin-bottom:14px}
+.legal-modal-body strong{color:var(--text-1);font-weight:600}
+.legal-modal-body ul{list-style:none;padding-left:0;margin-bottom:14px}
+.legal-modal-body ul li{position:relative;padding-left:20px;font-size:17px;color:var(--text-2);line-height:1.7;margin-bottom:8px}
+.legal-modal-body ul li::before{content:'';position:absolute;left:0;top:12px;width:8px;height:1px;background:var(--orange)}
+body.modal-open{overflow:hidden}
+.footer-legal-row{display:flex;align-items:center;gap:10px;margin-top:8px}
+.footer-legal-link{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-2);background:none;border:1px solid var(--rule);padding:8px 14px;border-radius:var(--r);cursor:pointer;transition:border-color .15s,color .15s,background .15s}
+.footer-legal-link:hover{border-color:var(--orange);color:var(--orange);background:var(--orange-dim)}
+.footer-legal-sep{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-3)}
+@media(max-width:600px){.legal-modal-close{top:92px;right:16px}.legal-modal-body{padding:40px 16px 80px}}
 </style>
-<script>
-    !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="Mi Ri init Vi Gi Rr Wi Ji Bi capture calculateEventProperties tn register register_once register_for_session unregister unregister_for_session an getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync un identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException addExceptionStep captureLog startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty nn Xi createPersonProfile setInternalOrTestUser sn Hi cn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Ki debug Lr rn getPageViewId captureTraceFeedback captureTraceMetric Di".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-    posthog.init('phc_AJ7Y2dxjeY5V9A5YMNtw9qWmG33kkyuoN4TqksF38LTT', {
-        api_host: 'https://us.i.posthog.com',
-        defaults: '2026-01-30',
-        person_profiles: 'identified_only',
-    })
-</script>
 </head>
 <body>
 
-<header>
-  <div class="wrap nav">
-    <div class="brand">
-      <span class="mark">
-        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="2" width="36" height="36" fill="#f6831f"/>
-          <path d="M9 10 L20 31 L31 10" fill="none" stroke="#0f1f33" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/>
-        </svg>
-      </span> Valdes Systems
-    </div>
-    <nav class="nav-links">
-      <a href="#how">How it works</a>
-      <a href="#demo">Live demo</a>
-      <a href="#packages">Pricing</a>
-      <a href="#about">About</a>
-      <a href="https://cal.com/diego-valdes/call" class="cta" data-location="header">Book a Call</a>
-    </nav>
-  </div>
-</header>
+<!-- Grain overlay — SVG feTurbulence, no image needed. baseFrequency .78, numOctaves 3. -->
+<svg class="grain" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <filter id="gf">
+    <feTurbulence type="fractalNoise" baseFrequency=".78" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#gf)"/>
+</svg>
 
-<section class="hero">
-  <div class="sheet-border"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
-  <div class="wrap">
-    <span class="kicker">DWG-01 · Automation for the trades</span>
-    <h1>Stop losing jobs to <em>missed calls.</em></h1>
-    <p class="lead">When you're on a job — up a ladder, in a truck, hands full — you can't always grab the phone, and that lead calls the next guy. I build simple systems that catch those jobs for you, automatically. Local, no jargon, no software you'll never figure out.</p>
-    <div class="hero-cta">
-      <a href="https://cal.com/diego-valdes/call" class="btn btn-orange" data-location="hero">Book a free 15-min call →</a>
-      <a href="#packages" class="btn btn-ghost">Build your estimate</a>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- ════════════════════════════════════════════════════════
+     NAV
+     Orange bottom bar = the "stamp on the page" anchoring the nav.
+     V logo: left stroke orange (diagonal accent), right stroke warm white.
+════════════════════════════════════════════════════════ -->
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <!-- V logo: small version. Left diagonal = orange. Right = --text-1. -->
+    <!-- FIX 1 — stacked wordmark: VALDES / orange dim-line / SYSTEMS -->
+    <a href="#top" class="nav-brand" aria-label="Valdes Systems — home">
+      <div class="nav-stacked-wordmark">
+        <span class="nsw-valdes">VALDES</span>
+        <svg class="nsw-divider" viewBox="0 0 80 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- T-bracket left tick -->
+          <line x1="0.75" y1="0.75" x2="0.75" y2="9.25" stroke="#ED8B2F" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Horizontal dimension span -->
+          <line x1="0.75" y1="5" x2="79.25" y2="5" stroke="#ED8B2F" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- T-bracket right tick -->
+          <line x1="79.25" y1="0.75" x2="79.25" y2="9.25" stroke="#ED8B2F" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="nsw-systems">SYSTEMS</span>
+      </div>
+    </a>
+    <div class="nav-links" role="list">
+      <a href="#how-it-works" role="listitem">How it works</a>
+      <a href="#demo" role="listitem">Live demo</a>
+      <a href="#pricing" role="listitem">Pricing</a>
+      <a href="#calculator" role="listitem">Estimate</a>
+      <a href="#faq" role="listitem">FAQ</a>
+      <a href="#about" role="listitem">About</a>
     </div>
-    <div class="hero-proof">
-      <div><strong>10 sec</strong>missed call → auto text-back</div>
-      <div><strong>24/7</strong>never miss a lead again</div>
-      <div><strong>Local</strong>Saint Marys / Jacksonville area</div>
+    <a href="https://cal.com/diego-valdes/call" class="nav-cta" aria-label="Book a free 15-minute call">Book a Call</a>
+  </div>
+</nav>
+
+<div class="page" id="main-content">
+
+<!-- ════════════════════════════════════════════════════════
+     HERO
+     Layer A: blueprint grid (parallax 0.3x via JS)
+     Layer B: floating annotations (parallax 0.6x via JS)
+     Layer C: content (normal scroll)
+     Title block bottom-right: PROJECT/DRAWN BY/SHEET/SCALE
+════════════════════════════════════════════════════════ -->
+<section class="hero" id="top" aria-label="Hero">
+
+  <!-- Layer A — blueprint grid, driven slow by JS -->
+  <div class="hero-layer-a" id="heroLayerA" aria-hidden="true">
+    <div class="bp-grid"></div>
+  </div>
+
+  <!-- Layer B — floating drafting annotations -->
+  <div class="hero-layer-b" id="heroLayerB" aria-hidden="true">
+    <div class="anno anno-1" data-reverse-scroll="0.08">SCALE 1:1 · DWG-01</div>
+    <div class="anno anno-2">DETAIL A — SEE SHEET 02</div>
+    <div class="anno anno-3">SECTION A-A · TRADES AUTOMATION</div>
+    <div class="anno anno-4" data-reverse-scroll="0.06">REV 03 · 2026.05.30</div>
+  </div>
+
+  <!-- Layer C — actual content -->
+  <div class="hero-inner">
+
+    <!-- "DWG-01 · AUTOMATION FOR THE TRADES" — original site element, preserved -->
+    <div class="hero-dwg reveal" data-reverse-scroll="0.05">DWG-01 · Automation for the Trades</div>
+
+    <!-- Headline — LOCKED. Do not change per audit. -->
+    <h1 class="reveal d1">Stop losing jobs to<br><em>missed calls.</em></h1>
+
+    <p class="hero-sub reveal d2">
+      When you're on a job — up a ladder, in a truck, hands full — you can't always grab the phone, and that lead calls the next guy.
+    </p>
+
+    <!-- Credibility line — moved to hero (audit fix #8) -->
+    <p class="hero-cred reveal d2" aria-label="About the founder">
+      Built by someone who's done the work — Diego Valdes, Founder
+    </p>
+
+    <!-- Stats row. "Local" replaced with "Based in Saint Marys, GA" (audit fix #2 + Diego's geo note) -->
+    <!-- FIX 3 — every stat gets a .stat-ann row (18px fixed height) so all three baseline-align -->
+    <div class="hero-stats reveal d3">
+      <div class="stat">
+        <div class="stat-ann stat-ann--measure" aria-hidden="true">10.0 sec</div>
+        <div class="stat-val">10 sec</div>
+        <div class="stat-label">missed call → text back</div>
+      </div>
+      <div class="stat">
+        <div class="stat-ann" aria-hidden="true"></div>
+        <div class="stat-val">24/7</div>
+        <div class="stat-label">never miss a lead</div>
+      </div>
+      <div class="stat">
+        <div class="stat-ann" aria-hidden="true"></div>
+        <!-- Was "Local" — now specific city (audit fix #2) -->
+        <div class="stat-val" style="font-size:22px;letter-spacing:.01em">Saint Marys</div>
+        <div class="stat-label">Kingsland · Jacksonville</div>
+      </div>
     </div>
+
+    <div class="hero-actions reveal d4">
+      <a href="https://cal.com/diego-valdes/call" class="btn-primary" aria-label="Book a free 15-minute call with Diego">
+        Book a free 15-min call →
+      </a>
+      <a href="#pricing" class="btn-ghost" aria-label="See pricing options">
+        Price your setup
+      </a>
+    </div>
+
   </div>
-  <div class="titleblock">
-    <div class="k">PROJECT</div><div class="v">VALDES SYSTEMS</div>
-    <div class="k">DRAWN BY</div><div class="v">D. VALDES</div>
-    <div class="k">SHEET</div><div class="v">01 / 05</div>
-    <div class="k">SCALE</div><div class="v">N.T.S.</div>
+
+  <!-- Blueprint title block — drafting mark, bottom-right. Preserved from original. -->
+  <div class="title-block" aria-hidden="true">
+    <table>
+      <tr><td class="tbl">PROJECT</td><td class="tbv">VALDES SYSTEMS</td></tr>
+      <tr><td class="tbl">DRAWN BY</td><td class="tbv">D. VALDES</td></tr>
+      <tr><td class="tbl">SHEET</td><td class="tbv">01 / 05</td></tr>
+      <tr><td class="tbl">SCALE</td><td class="tbv">N.T.S.</td></tr>
+    </table>
   </div>
+
 </section>
 
-<div class="strip">
-  <div class="wrap"><p>⚠ Most customers call 2–3 businesses and hire whoever answers first. A missed call is a lost job.</p></div>
+<!-- ════════════════════════════════════════════════════════
+     FIELD NOTE — replaces ⚠ warning box
+     "FIELD NOTE 01 · INDUSTRY DATA" — confident annotation,
+     not a warning label. No ⚠ icon. Orange left bar stays.
+     Diego-underlined-a-fact energy.
+════════════════════════════════════════════════════════ -->
+<div class="field-note-section" aria-label="Industry context">
+  <div class="field-note-wrap">
+    <div class="field-note reveal">
+      <div class="fn-label">Field Note 01 · Industry Data</div>
+      <p class="fn-text">Most customers call 2–3 businesses and hire whoever responds first. Don't be the one who didn't pick up.</p>
+    </div>
+  </div>
 </div>
 
-<section class="trades">
-  <div class="wrap">
-    <div class="lead-line reveal">// BUILT FOR THE TRADES</div>
-    <h3 class="reveal">If you run a <em>labor or home-service business</em>, this is for you.</h3>
-    <div class="trade-tags reveal d1">
-      <span>Pool Service</span>
-      <span>Roofing</span>
-      <span>Landscaping</span>
-      <span>Lawn Care</span>
-      <span>HVAC</span>
-      <span>Plumbing</span>
-      <span>Electrical</span>
-      <span>Pressure Washing</span>
-      <span>Pest Control</span>
-      <span>Handyman</span>
-      <span>Fencing</span>
-      <span>Garage Doors</span>
-      <span>Cleaning</span>
-      <span class="more">+ any trade that runs on phone calls</span>
+<!-- ════════════════════════════════════════════════════════
+     BUILT FOR — trade pill grid
+     16 trades + "+ ANY TRADE THAT RUNS ON PHONE CALLS"
+     Window Cleaning, House Cleaning, Pool Cleaning added
+     per Diego's specific request on 5/30.
+════════════════════════════════════════════════════════ -->
+<section class="built-for-section" id="built-for" aria-labelledby="built-for-heading">
+  <div class="sec-para-layer" id="builtForParaLayer" aria-hidden="true">
+    <div class="para-grid"></div>
+    <div class="para-midground" data-speed="0.50">
+      <span class="anno" style="top:8%;left:3%">SCOPE · ALL TRADES</span>
+      <span class="anno" style="top:42%;right:5%">REF · IND. STD</span>
+      <span class="anno" style="bottom:22%;left:4%">← 16 TRADES →</span>
+      <span class="anno" style="top:68%;right:7%">SEE NOTE 3</span>
+    </div>
+    <div class="para-closeground" data-speed="0.75">
+      <span class="anno-lg" style="top:55%;left:5%">DETAIL · COVERAGE MATRIX</span>
+    </div>
+  </div>
+  <div class="inner">
+    <div class="sec-label reveal">// Built for the Trades</div>
+    <p class="built-for-lead reveal" id="built-for-heading">
+      If you run a <em>labor or home-service business</em>, this is for you.
+    </p>
+    <div class="trade-chips reveal" role="list" aria-label="Industries served">
+      <!-- Original 13 + 3 additions Diego requested: Window Cleaning, House Cleaning, Pool Cleaning -->
+      <span class="chip" role="listitem">Pool Service</span>
+      <span class="chip" role="listitem">Roofing</span>
+      <span class="chip" role="listitem">Landscaping</span>
+      <span class="chip" role="listitem">Lawn Care</span>
+      <span class="chip" role="listitem">HVAC</span>
+      <span class="chip" role="listitem">Plumbing</span>
+      <span class="chip" role="listitem">Electrical</span>
+      <span class="chip" role="listitem">Pressure Washing</span>
+      <span class="chip" role="listitem">Pest Control</span>
+      <span class="chip" role="listitem">Handyman</span>
+      <span class="chip" role="listitem">Fencing</span>
+      <span class="chip" role="listitem">Garage Doors</span>
+      <span class="chip" role="listitem">Cleaning</span>
+      <span class="chip" role="listitem">Window Cleaning</span>
+      <span class="chip" role="listitem">House Cleaning</span>
+      <span class="chip" role="listitem">Pool Cleaning</span>
+      <span class="chip-any" role="listitem">+ Any Trade That Runs on Phone Calls</span>
     </div>
   </div>
 </section>
 
-<section class="block paper-tex" id="how">
-  <div class="wrap">
-    <div class="sec-ref">SHEET 02 — THE FIX</div>
-    <div class="sec-head reveal">
-      <div class="tag">// THE FIX</div>
-      <h2>The missed-call text-back</h2>
-      <p>The simplest system that pays for itself. When you can't answer, your customer doesn't get silence — they get an instant text, and you keep the job.</p>
+<!-- ════════════════════════════════════════════════════════
+     THE FIX — 3-step process
+     Step 2: verbatim message shown (audit fix #6).
+     Step 3: "THE LEAD STAYS WITH YOU" (Diego's correction —
+     we can't promise they win the job, but the lead is warm).
+     "SHEET 02 — THE FIX" margin notation preserved.
+════════════════════════════════════════════════════════ -->
+<section class="fix-section" id="how-it-works" aria-labelledby="fix-heading">
+  <div class="sec-para-layer" id="howItWorksParaLayer" aria-hidden="true">
+    <div class="para-grid"></div>
+    <div class="para-midground" data-speed="0.50">
+      <span class="anno" style="top:10%;left:5%">PROC FLOW · REV 02</span>
+      <span class="anno" style="top:35%;right:4%">STEP 1 / 3</span>
+      <span class="anno" style="bottom:30%;left:3%">→ AUTO-RESPONSE</span>
+      <span class="anno" style="top:60%;right:6%">TIME · 10s</span>
+      <span class="anno" style="bottom:12%;right:8%">SEQ · 003</span>
     </div>
-    <div class="dim-wrap reveal"><div class="seg"></div><div class="lbl">◄ 3-STEP PROCESS ►</div><div class="seg"></div></div>
-    <div class="how">
-      <div class="step reveal"><div class="num">01</div><h3>Call comes in</h3><p>A customer calls while you're on a job. You can't pick up — your hands are full.</p></div>
-      <div class="step reveal d1"><div class="num">02</div><h3>System texts back</h3><p>Within seconds they get a text: "Sorry I missed you — what do you need? I'll call you right back." The lead stays warm.</p></div>
-      <div class="step reveal d2"><div class="num">03</div><h3>You win the job</h3><p>You call back when you're free instead of finding out they already hired someone else. Jobs you used to lose, you now keep.</p></div>
+    <div class="para-closeground" data-speed="0.75">
+      <span class="anno-lg" style="top:48%;left:4%">DETAIL · TXT-BACK SEQUENCE</span>
     </div>
   </div>
-</section>
+  <!-- "SHEET 02 — THE FIX" — original site margin language, preserved -->
+  <div class="sheet-margin-note" aria-hidden="true" data-reverse-scroll="0.07">SHEET 02 — THE FIX</div>
+  <div class="inner">
+    <div class="sec-label reveal">[02] — How it works</div>
+    <h2 class="reveal" id="fix-heading">When you can't answer,<br>your customer doesn't get <em>silence.</em></h2>
+    <p class="fix-intro reveal">Three things happen. You don't have to do any of them.</p>
 
-<section class="block demo-sec" id="demo">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="tag">// LIVE DEMO</div>
-      <h2>See it work — right now.</h2>
-      <p>Type in your name and number, then hit the button. Watch what your customer sees when they call and you can't pick up. This is exactly what we'd set up for your business.</p>
-    </div>
-    <div class="demo-grid">
-      <div class="demo-controls reveal">
-        <div class="field">
-          <label>Your business name</label>
-          <input id="d-biz" type="text" placeholder="e.g. Apex Pool Service" maxlength="28">
+    <div class="steps" role="list">
+
+      <div class="step reveal" role="listitem">
+        <div class="step-num" aria-hidden="true">1</div>
+        <div class="step-content">
+          <h3>Call comes in</h3>
+          <p>Nothing changes on your end. Your phone rings just like always. You're busy — you can't grab it.</p>
         </div>
-        <div class="field">
-          <label>A name to text (yours)</label>
-          <input id="d-name" type="text" placeholder="e.g. Mike" maxlength="20">
-        </div>
-        <div class="field">
-          <label>Phone number (just for the demo)</label>
-          <input id="d-phone" type="tel" placeholder="(555) 123-4567" maxlength="16">
-        </div>
-        <button class="demo-btn" id="d-go">▶ Simulate a missed call</button>
-        <div class="demo-status" id="d-status">Fill it in and hit the button to see the magic.</div>
       </div>
-      <div class="phone">
-        <div class="notch"></div>
-        <div class="screen">
-          <div class="ptime" id="p-time">9:41</div>
-          <div class="msgs" id="p-msgs">
-            <div class="msg-hd" style="opacity:.4">
-              <div class="mname" id="p-mname">Your Business</div>
-              <div class="mnum">Text messages</div>
+
+      <div class="step reveal d1" role="listitem">
+        <div class="step-num" aria-hidden="true">2</div>
+        <div class="step-content">
+          <h3>System texts back — in 10 seconds</h3>
+          <p>Before that customer has even put their phone down, they have a message from your business.</p>
+          <!-- Verbatim message — the most persuasive line on the page (audit fix #6) -->
+          <div class="msg-preview" role="note" aria-label="The actual auto-text message">
+            <div class="msg-label">The actual message they receive</div>
+            <p class="msg-text">"Hey, this is [Your Business] — sorry we missed you! What do you need a hand with? We'll call you right back."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 updated — can't promise they "win the job" (Diego's correction) -->
+      <div class="step reveal d2" role="listitem">
+        <div class="step-num" aria-hidden="true">3</div>
+        <div class="step-content">
+          <h3>The lead stays with you</h3>
+          <p>They're not hunting for the next number to call. You've got a real shot at the job — instead of finding out next week they hired someone else.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     LIVE DEMO — iPhone mockup + form
+     Audit fix #7: demo moved ABOVE pricing.
+     Audit fix #1: spam reassurance + expectation-setter.
+     No real phone number required — iPhone mockup IS the demo.
+     TODO: Diego — attach your n8n/webhook to id="demo-form"
+     to send a real SMS. The client-side animation works now.
+════════════════════════════════════════════════════════ -->
+<section class="demo-section" id="demo" aria-labelledby="demo-heading">
+  <div class="sec-para-layer" id="demoParaLayer" aria-hidden="true">
+    <div class="para-grid"></div>
+    <div class="para-midground" data-speed="0.50">
+      <span class="anno" style="top:9%;right:5%">LIVE TEST</span>
+      <span class="anno" style="top:38%;left:4%">RUNTIME · 10s</span>
+      <span class="anno" style="bottom:26%;right:6%">SIM MODE · 01</span>
+      <span class="anno" style="top:65%;left:5%">TEST CASE 01</span>
+    </div>
+    <div class="para-closeground" data-speed="0.75">
+      <span class="anno-lg" style="top:52%;right:5%">DETAIL · DEMO SEQUENCE</span>
+    </div>
+  </div>
+  <div class="inner">
+    <div class="sec-label reveal">// Try it before you decide</div>
+    <h2 class="reveal" id="demo-heading">See it work<br>on your <em>own phone.</em></h2>
+    <p class="reveal" style="max-width:50ch;margin-bottom:32px">
+      Enter your info and simulate a missed call. No pitch. No sales follow-up. Just watch it work.
+    </p>
+
+    <div class="demo-layout reveal">
+
+      <!-- Form side -->
+      <div class="demo-form-side">
+        <!-- Expectation-setter above form (audit fix #1) -->
+        <p class="demo-expect">Hit simulate → your phone buzzes in about 10 seconds</p>
+
+        <!-- TODO: Diego — attach your webhook/n8n handler to this form.
+             The iPhone animation fires client-side regardless of submission status. -->
+        <form class="demo-form" id="demo-form" novalidate aria-label="Missed call simulation form">
+
+          <div class="form-group">
+            <label for="demo-biz">Your business name <span aria-hidden="true">(used in the auto-text)</span></label>
+            <input type="text" id="demo-biz" name="businessName"
+              placeholder="e.g. Kingsland Roofing"
+              autocomplete="organization"
+              aria-describedby="biz-hint">
+            <span class="spam-note" id="biz-hint">This is how your business name appears in the text-back — nothing is sent or saved.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="demo-name">Your name</label>
+            <input type="text" id="demo-name" name="yourName"
+              placeholder="e.g. Mike"
+              autocomplete="given-name">
+          </div>
+
+          <div class="form-group">
+            <label for="demo-phone">Your cell <span aria-hidden="true">(the test text goes here)</span></label>
+            <input type="tel" id="demo-phone" name="phone"
+              placeholder="(912) 555-0100"
+              autocomplete="tel"
+              aria-describedby="phone-spam">
+            <!-- Spam reassurance directly under phone field (audit fix #1) -->
+            <span class="spam-note" id="phone-spam">Your name and number aren't saved, recorded, or sent anywhere. The demo runs entirely on your screen.</span>
+          </div>
+
+          <button type="submit" class="demo-btn" aria-label="Simulate a missed call and receive demo text">
+            ▶ Simulate a missed call
+          </button>
+
+        </form>
+
+        <p class="demo-form-footer">// Your phone will buzz. That's the whole demo.</p>
+      </div>
+
+      <!-- iPhone mockup side -->
+      <div class="iphone-wrap">
+        <div class="iphone" aria-label="iPhone showing the auto-text arriving" role="img">
+          <div class="iphone-notch"></div>
+          <div class="iphone-header">Messages</div>
+          <div class="iphone-contact" id="iphone-contact-name">Your Business</div>
+          <div class="iphone-screen" id="iphone-screen">
+            <div class="iphone-placeholder" id="iphone-placeholder">// Hit Simulate to see what your customer sees</div>
+            <div class="iphone-typing" id="iphone-typing">
+              <div class="tdot"></div>
+              <div class="tdot"></div>
+              <div class="tdot"></div>
             </div>
-            <div style="margin:auto;color:#5a6678;font-size:13px;text-align:center;padding:0 20px" id="p-empty">Your customer's phone will show up here.</div>
+            <div class="sms-bubble sms-inbound sms-auto" id="sms-msg1">Hey, this is Your Business — sorry we missed you! What do you need a hand with? We'll call you right back.</div>
+            <div class="sms-timestamp sms-auto" id="sms-ts1" style="transition-delay:.3s">Just now</div>
+            <div class="sms-bubble sms-outbound sms-auto" id="sms-msg2">Hey are you available for a gutter clean this week?</div>
+            <div class="sms-timestamp right sms-auto" id="sms-ts2" style="transition-delay:.3s">12:48 PM</div>
+            <div class="iphone-typing" id="iphone-typing2">
+              <div class="tdot"></div>
+              <div class="tdot"></div>
+              <div class="tdot"></div>
+            </div>
+            <div class="sms-bubble sms-inbound sms-auto" id="sms-msg3">Definitely — I've got openings Thursday and Friday afternoon. Want me to send a quick quote based on your gutter size? Or I can swing by and give you a real number in person — your call.</div>
+            <div class="sms-timestamp sms-auto" id="sms-ts3" style="transition-delay:.3s">Just now</div>
+          </div>
+          <div class="iphone-home"></div>
+        </div>
+      </div>
+      <div class="demo-footer-note sms-auto" id="demo-footer-note">// This is just the first three minutes. The system can carry it further — quote follow-up, booking, review requests.</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     PRIVACY — absolutely zero invasion of privacy.
+     Diego specifically asked for this. "// PRIVACY" label in
+     orange makes it visible to a skeptical trades guy.
+     Plain-talk copy. No jargon. No hedging.
+════════════════════════════════════════════════════════ -->
+<div class="privacy-section" aria-label="Privacy statement">
+  <div class="privacy-wrap">
+    <div class="privacy-box reveal">
+      <div class="privacy-label">// Privacy</div>
+      <p class="privacy-text">
+        <strong>Straight talk:</strong> I never see or store your call content. The system only reads ring/answer status to trigger the text-back. Your customers' conversations, voicemails, and call details stay between you and them. None of it ever touches my system.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════
+     PRICING — 3 equal-width cards, side by side
+     Middle card: 2px orange border + "RECOMMENDED" badge.
+     "Most Popular" removed — no clients yet, that's dishonest.
+     "RECOMMENDED" is accurate: it's what Diego recommends.
+     Audit fix #12: "From $X setup" language + confirm note.
+     Sheet notation: "SHEET 03 — SPEC & PRICING"
+════════════════════════════════════════════════════════ -->
+<section class="pricing-section" id="pricing" aria-labelledby="pricing-heading">
+  <!-- FIX 5 — parallax layer behind pricing content -->
+  <div class="sec-para-layer" id="pricingParaLayer" aria-hidden="true">
+    <div class="para-grid"></div>
+    <div class="para-midground" data-speed="0.50">
+      <span class="anno" style="top:8%;left:4%">PRICING · REV 04</span>
+      <span class="anno" style="top:44%;right:5%">TIER A / B / C</span>
+      <span class="anno" style="bottom:18%;left:5%">SEE SHEET 04</span>
+    </div>
+    <div class="para-closeground" data-speed="0.75">
+      <span class="anno-lg" style="top:58%;right:5%">DETAIL · PRICING MATRIX</span>
+    </div>
+  </div>
+  <div class="pricing-sheet" aria-hidden="true">SHEET 03 — SPEC &amp; PRICING</div>
+  <div class="inner">
+    <div class="sec-label reveal">[03] — Pricing</div>
+    <h2 class="reveal" id="pricing-heading">Start simple.<br><em>Grow when you're ready.</em></h2>
+    <p class="pricing-intro reveal">
+      Most businesses start with Starter. At month 2 or 3, when they can see it paying for itself, they move up.
+      Nothing is locked in — you add the next piece when it makes sense for you.
+    </p>
+
+    <div class="pricing-cards" role="list">
+
+      <!-- Starter -->
+      <div class="price-card reveal" role="listitem" aria-label="Starter plan">
+        <div class="pc-tier">Step 01 — Start here</div>
+        <div class="pc-name">Starter</div>
+        <div class="pc-setup">From</div>
+        <!-- Audit fix #12: "From $500 setup" not "$500+" -->
+        <div class="pc-price">$500 <span style="font-family:'DM Sans',sans-serif;font-size:16px;color:var(--text-3)">setup</span></div>
+        <div class="pc-mo">+ $200/mo</div>
+        <p class="pc-confirm">Final price confirmed on your free 15-min call. No surprises.</p>
+        <div class="pc-features" role="list">
+          <!-- Plain-English descriptions per Diego's 5/30 feedback -->
+          <div class="pc-feature" role="listitem">
+            <div class="pc-dot" aria-hidden="true"></div>
+            Every missed call gets an auto-text back in under 10 seconds — so the lead doesn't move on
+          </div>
+          <div class="pc-feature" role="listitem">
+            <div class="pc-dot" aria-hidden="true"></div>
+            Lead captured before they call someone else
+          </div>
+          <div class="pc-feature" role="listitem">
+            <div class="pc-dot" aria-hidden="true"></div>
+            Runs 24/7 — no new apps for you to learn
           </div>
         </div>
-        <div class="callscreen" id="p-call">
-          <div class="who">Incoming call</div>
-          <div class="num" id="p-callernum">(555) 123-4567</div>
-          <div class="sub">mobile</div>
-          <div class="avatar ring">📞</div>
-          <div class="actions">
-            <div class="act decline">✕</div>
-            <div class="act accept">✓</div>
+        <div class="pc-diego">// Local support from Diego — direct line, not a support ticket</div>
+        <a href="https://cal.com/diego-valdes/call" class="pc-cta" aria-label="Book a call to discuss the Starter plan">Book a call →</a>
+      </div>
+
+      <!-- Growth — middle, featured with orange border + RECOMMENDED badge -->
+      <div class="price-card featured reveal d1" role="listitem" aria-label="Growth plan, recommended">
+        <!-- "RECOMMENDED" replaces "MOST POPULAR" — honest, no client data needed -->
+        <div class="pc-badge">Recommended</div>
+        <div class="pc-tier" style="margin-top:12px">Step 02 — Scale up</div>
+        <div class="pc-name">Growth</div>
+        <div class="pc-setup">From</div>
+        <div class="pc-price">$1,000 <span style="font-family:'DM Sans',sans-serif;font-size:16px;color:var(--text-3)">setup</span></div>
+        <div class="pc-mo">+ $350/mo</div>
+        <p class="pc-confirm">Final price confirmed on your free 15-min call. No surprises.</p>
+        <div class="pc-features" role="list">
+          <div class="pc-feature" role="listitem">
+            <div class="pc-dot" aria-hidden="true"></div>
+            Everything in Starter
+          </div>
+          <!-- "Automated lead follow-up" → plain English (audit fix) -->
+          <div class="pc-feature" role="listitem">
+            <div class="pc-dot" aria-hidden="true"></div>
+            If they don't reply on day one, the system follows up for a week. Nothing slips.
+          </div>
+          <!-- Google reviews called out separately (audit fix) -->
+          <div class="pc-feature" role="listitem">
+            <div class="pc-dot" aria-hidden="true"></div>
+            After every job: auto-text asking for a Google review — the best trade-business marketing there is
+          </div>
+          <!-- "Simple reporting" → specific (audit fix) -->
+          <div class="pc-feature" role="listitem">
+            <div class="pc-dot" aria-hidden="true"></div>
+            Monthly summary of calls caught and leads saved
           </div>
         </div>
+        <div class="pc-diego">// Local support from Diego — direct line, not a support ticket</div>
+        <a href="https://cal.com/diego-valdes/call" class="pc-cta" aria-label="Book a call to discuss the Growth plan">Book a call →</a>
       </div>
-    </div>
-  </div>
-</section>
 
-<section class="block paper-tex" id="packages" style="background:#eceef2">
-  <div class="wrap">
-    <div class="sec-ref" style="color:#9aa3b3">SHEET 03 — SPEC &amp; PRICING</div>
-    <div class="sec-head reveal">
-      <div class="tag">// PRICING</div>
-      <h2>Pick a bundle — or build your own.</h2>
-      <p>Already have a website? Just need the phone handled? You only pay for what you actually need. Grab a ready-made bundle below, or build your own estimate from individual services. One-time build fee plus a small monthly to keep it running.</p>
-    </div>
-
-    <div class="pkgs">
-      <div class="pkg reveal">
-        <div class="ph"><h3>Starter</h3><div class="sub">Never Miss a Job</div><div class="price">$500<small>+ $200/mo</small></div></div>
-        <ul><li>Missed-call text-back</li><li>Instant lead capture</li><li>Setup &amp; testing done for you</li><li>Local support from Diego</li></ul>
-        <div class="pf"><a href="#contact">Get started</a></div>
-      </div>
-      <div class="pkg feat reveal d1">
-        <div class="badge">Most popular</div>
-        <div class="ph"><h3>Growth</h3><div class="sub">Capture &amp; Convert</div><div class="price">$1,000<small>+ $350/mo</small></div></div>
-        <ul><li>Everything in Starter</li><li>Automated lead follow-up</li><li>Google review requests</li><li>Simple reporting</li></ul>
-        <div class="pf"><a href="#contact">Get started</a></div>
-      </div>
-      <div class="pkg reveal d2">
-        <div class="ph"><h3>Full System</h3><div class="sub">Done For You</div><div class="price">$2,000<small>+ $500/mo</small></div></div>
-        <ul><li>Everything in Growth</li><li>Online booking &amp; scheduling</li><li>Quote &amp; invoice follow-up</li><li>Reporting dashboard</li></ul>
-        <div class="pf"><a href="#contact">Get started</a></div>
-      </div>
-    </div>
-
-    <div class="dim-wrap reveal" style="margin-top:44px"><div class="seg"></div><div class="lbl">◄ OR SPEC YOUR OWN BUILD ►</div><div class="seg"></div></div>
-
-    <div class="builder reveal" id="builder">
-      <div class="bl">
-        <h3>Build your own estimate</h3>
-        <p>Tap the services you want. Your estimate updates instantly — and if your picks add up to a bundle, you get the bundle price automatically. No surprises, no upcharge for going à la carte.</p>
-        <div id="svc-list"></div>
-      </div>
-      <div class="br">
-        <h4>// YOUR ESTIMATE</h4>
-        <div class="cart-list" id="cart-list"><div class="cart-empty">No services selected yet — tap some on the left.</div></div>
-        <div class="totals">
-          <div class="tr"><span class="lab">One-time build</span><span class="val" id="t-build">$0</span></div>
-          <div class="tr"><span class="lab">Monthly</span><span class="val" id="t-mo">$0<small>/mo</small></span></div>
-          <div class="note">Estimate only — final pricing confirmed on our call. Prices match the bundles above exactly.</div>
-          <div class="bundle-hint" id="bundle-hint"></div>
+      <!-- Full System -->
+      <div class="price-card reveal d2" role="listitem" aria-label="Full System plan">
+        <div class="pc-tier">Step 03 — The whole office</div>
+        <div class="pc-name">Full System</div>
+        <div class="pc-setup">From</div>
+        <div class="pc-price">$2,000 <span style="font-family:'DM Sans',sans-serif;font-size:16px;color:var(--text-3)">setup</span></div>
+        <div class="pc-mo">+ $500/mo</div>
+        <p class="pc-confirm">Final price confirmed on your free 15-min call. No surprises.</p>
+        <div class="pc-features" role="list">
+          <div class="pc-feature" role="listitem">
+            <div class="pc-dot" aria-hidden="true"></div>
+            Everything in Growth
+          </div>
+          <!-- "Online booking & scheduling" → just "Online booking" (audit fix) -->
+          <div class="pc-feature" role="listitem">
+            <div class="pc-dot" aria-hidden="true"></div>
+            Customers pick a slot themselves. No more phone tag.
+          </div>
+          <div class="pc-feature" role="listitem">
+            <div class="pc-dot" aria-hidden="true"></div>
+            The system chases quiet quotes and unpaid invoices for you
+          </div>
+          <!-- "Reporting dashboard" → "Monthly Summary" (audit fix) -->
+          <div class="pc-feature" role="listitem">
+            <div class="pc-dot" aria-hidden="true"></div>
+            Monthly summary — calls caught, leads saved, jobs likely kept. One page.
+          </div>
         </div>
-        <a href="https://cal.com/diego-valdes/call" class="btn btn-orange" data-location="cart">Book a call with this estimate →</a>
+        <div class="pc-diego">// Local support from Diego — direct line, not a support ticket</div>
+        <a href="https://cal.com/diego-valdes/call" class="pc-cta" aria-label="Book a call to discuss the Full System plan">Book a call →</a>
+      </div>
+
+    </div>
+
+    <!-- Diego will uncomment this and fill in once he has his first real testimonial (post-Marley signing or post-demo). Keep the styling intact. -->
+    <!-- TESTIMONIAL SLOT — uncomment when Diego has a real quote
+    Testimonial placeholder (audit fix #15)
+    TODO: Diego — add first real testimonial here. Even one sentence changes everything.
+          Ask Marley, Luis, or anyone who's tested the demo.
+          Format: "Quote." — Name · Trade · City, GA
+    <div class="testimonial-slot reveal" role="complementary" aria-label="Testimonial — coming soon">
+      <div class="t-todo">// TODO: First testimonial goes here</div>
+      <p class="t-quote">"[One real quote from a demo tester or first client goes here.]"</p>
+      <p class="t-attr">— Name · Trade · City, GA</p>
+    </div>
+    -->
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     CALCULATOR + "NOT SURE?" HELPER
+     Helper opens inline — blueprint unroll animation (scaleY
+     from transform-origin top). 2 questions → pre-fills checkboxes.
+     All services uncheckable — missed-call text-back is
+     visually recommended and pre-checked by default only.
+     Audit fix #10: CTA at end of calculator.
+════════════════════════════════════════════════════════ -->
+<section class="calc-section" id="calculator" aria-labelledby="calc-heading">
+  <div class="sec-para-layer" id="calcParaLayer" aria-hidden="true">
+    <div class="para-grid"></div>
+    <div class="para-midground" data-speed="0.50">
+      <span class="anno" style="top:7%;right:4%">BUILD · CUSTOM</span>
+      <span class="anno" style="top:36%;left:5%">TOTALS · LIVE</span>
+      <span class="anno" style="bottom:28%;right:5%">SUM · AUTO</span>
+      <span class="anno" style="top:62%;left:4%">SEE ESTIMATE</span>
+    </div>
+    <div class="para-closeground" data-speed="0.75">
+      <span class="anno-lg" style="top:44%;right:5%">DETAIL · BUILD SCHEDULE</span>
+    </div>
+  </div>
+  <div class="inner">
+    <div class="sec-label reveal">[04] — Build your estimate</div>
+    <h2 class="reveal" id="calc-heading">Price your <em>setup.</em></h2>
+    <p class="calc-intro reveal">
+      Every service is optional. Check what you need, uncheck what you don't.
+      The price updates as you go.
+    </p>
+
+    <!-- "NOT SURE WHERE TO START?" helper trigger -->
+    <div class="helper-row reveal">
+      <button class="helper-trigger" id="helper-trigger" aria-expanded="false" aria-controls="helper-panel" type="button">
+        NOT SURE WHERE TO START? <span class="ht-arrow">→</span>
+      </button>
+    </div>
+
+    <!-- Helper panel — blueprint unroll animation on open -->
+    <!-- Reassurance copy is non-negotiable per brief: "NOT an upsell" -->
+    <div class="helper-panel" id="helper-panel" aria-hidden="true">
+      <div class="helper-inner">
+
+        <!-- Orange label reassurance — the anti-upsell copy, impossible to miss -->
+        <div class="helper-reassurance">
+          // THIS JUST PRE-FILLS THE CALCULATOR BASED ON WHAT YOU TELL ME.<br>
+          // NOT AN UPSELL — IF TEXT-BACK IS ALL YOU NEED, THAT'S THE ONLY THING THAT GETS CHECKED.<br>
+          // UNCHECK ANYTHING THAT DOESN'T FIT.
+        </div>
+
+        <!-- Q1 -->
+        <div class="helper-q" id="hq1">How often do you miss calls while working?</div>
+        <div class="helper-opts" role="group" aria-labelledby="hq1" id="q1-opts">
+          <button class="helper-opt" data-q="1" data-val="few" type="button">A few times a week</button>
+          <button class="helper-opt" data-q="1" data-val="constantly" type="button">Constantly — it's a real problem</button>
+        </div>
+
+        <!-- Q2 -->
+        <div class="helper-q" id="hq2">What slows your business down most?</div>
+        <div class="helper-opts" role="group" aria-labelledby="hq2" id="q2-opts">
+          <button class="helper-opt" data-q="2" data-val="just-calls" type="button">Just missing calls</button>
+          <button class="helper-opt" data-q="2" data-val="calls-reviews" type="button">Calls + follow-up + reviews</button>
+          <button class="helper-opt" data-q="2" data-val="all" type="button">All of it — booking, quotes, everything</button>
+        </div>
+
+        <!-- Helper result -->
+        <div class="helper-result" id="helper-result">
+          <div class="hr-label">Based on your answers</div>
+          <p class="hr-rec" id="helper-rec-text">The Starter plan is likely your best starting point. I've pre-checked the services below.</p>
+        </div>
+
       </div>
     </div>
-  </div>
-</section>
 
-<section class="block menu-sec">
-  <div class="wrap">
-    <div class="sec-ref">SHEET 04 — FULL SPEC</div>
-    <div class="sec-head reveal">
-      <div class="tag">// THE FULL MENU</div>
-      <h2>The office side of your business — handled.</h2>
-      <p>You're great with your hands. The admin is what eats your evenings. I take it off your plate, one system at a time.</p>
+    <!-- FIX 7 — Price Promise callout above calculator -->
+    <div class="calc-promise reveal">
+      <span class="cp-label">// Price Promise</span>
+      If your picks match a bundle, you get the bundle price automatically — not a-la-carte markup. The calculator just builds your custom setup. Final price is whatever's lower.
     </div>
-    <div class="menu">
-      <div class="item reveal"><div class="ic">[01]</div><h3>Missed-Call Text-Back</h3><p>Never lose a lead to a phone you couldn't reach.</p></div>
-      <div class="item reveal d1"><div class="ic">[02]</div><h3>Lead Follow-Up</h3><p>Auto-nurture the leads that don't book on day one.</p></div>
-      <div class="item reveal d2"><div class="ic">[03]</div><h3>Review Automation</h3><p>Auto-request Google reviews after every job.</p></div>
-      <div class="item reveal"><div class="ic">[04]</div><h3>Online Booking</h3><p>Let customers book without the phone tag.</p></div>
-      <div class="item reveal d1"><div class="ic">[05]</div><h3>Quote &amp; Invoice Chase</h3><p>Stop chasing quiet quotes and unpaid invoices by hand.</p></div>
-      <div class="item reveal d2"><div class="ic">[06]</div><h3>Website &amp; Email</h3><p>A real online presence instead of just a Facebook page.</p></div>
-    </div>
-  </div>
-</section>
 
-<section class="block" id="about">
-  <div class="wrap">
-    <div class="sec-ref">SHEET 05 — ABOUT</div>
-    <div class="about">
-      <div class="photo reveal">
-        <svg viewBox="0 0 320 400" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%">
-          <!-- centered emblem: big chevron-V in a drafting frame -->
-          <rect x="60" y="90" width="200" height="200" fill="none" stroke="#7fa8d4" stroke-width="1.5" stroke-opacity=".5"/>
-          <!-- corner ticks -->
-          <path d="M60 110 L60 90 L80 90" fill="none" stroke="#f6831f" stroke-width="2"/>
-          <path d="M240 90 L260 90 L260 110" fill="none" stroke="#f6831f" stroke-width="2"/>
-          <path d="M260 270 L260 290 L240 290" fill="none" stroke="#f6831f" stroke-width="2"/>
-          <path d="M80 290 L60 290 L60 270" fill="none" stroke="#f6831f" stroke-width="2"/>
-          <!-- big V -->
-          <path d="M110 130 L160 250 L210 130" fill="none" stroke="#f6831f" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
-          <!-- dimension line under V -->
-          <line x1="110" y1="275" x2="210" y2="275" stroke="#7fa8d4" stroke-width="1"/>
-          <path d="M110 271 L110 279 M210 271 L210 279" stroke="#7fa8d4" stroke-width="1"/>
-          <text x="160" y="320" fill="#9fb4cc" font-family="monospace" font-size="13" text-anchor="middle" letter-spacing="2">VALDES SYSTEMS</text>
-          <text x="160" y="340" fill="#7fa8d4" font-family="monospace" font-size="10" text-anchor="middle" letter-spacing="1">EST. 2026 · SAINT MARYS, GA</text>
-        </svg>
-        <div class="ph-label">DIEGO VALDES · FOUNDER</div>
+    <!-- FIX 6 — Calculator box, 2-column desktop layout (CHANGE 5) -->
+    <div class="calc-box reveal">
+      <div class="calc-layout">
+
+        <!-- LEFT: service checkboxes -->
+        <div class="calc-services-col">
+          <div class="calc-services" role="list" aria-label="Services and pricing">
+
+            <!-- ──────────────────────────────────────────── -->
+            <!-- GROUP 1: CALL & LEAD CAPTURE                -->
+            <!-- ──────────────────────────────────────────── -->
+            <div class="calc-group" role="group" aria-label="Call and lead capture services">
+              <div class="cg-label">// Call &amp; Lead Capture</div>
+
+              <!-- Missed-Call Text-Back — RECOMMENDED, pre-checked -->
+              <label class="cs-row rec" role="listitem" aria-label="Missed-call text-back service">
+                <input type="checkbox" id="svc-textback" name="textback" checked
+                  data-setup="500" data-mo="200">
+                <div class="cs-info">
+                  <div class="cs-name">
+                    Missed-Call Text-Back
+                    <span class="cs-rec-badge">Recommended</span>
+                  </div>
+                  <p class="cs-desc">Every missed call gets a friendly text back in 10 seconds so the lead doesn't move on.</p>
+                </div>
+                <div class="cs-price">
+                  <div class="cs-mo">$200</div>
+                  <div class="cs-mo-label">/mo</div>
+                  <div class="cs-setup-price">+ $500 setup</div>
+                </div>
+              </label>
+
+              <label class="cs-row" role="listitem" aria-label="Lead follow-up service">
+                <input type="checkbox" id="svc-followup" name="followup"
+                  data-setup="400" data-mo="150">
+                <div class="cs-info">
+                  <div class="cs-name">Lead Follow-Up System</div>
+                  <p class="cs-desc">If they don't reply on day one, the system follows up for a week. Nothing slips.</p>
+                </div>
+                <div class="cs-price">
+                  <div class="cs-mo">$150</div>
+                  <div class="cs-mo-label">/mo</div>
+                  <div class="cs-setup-price">+ $400 setup</div>
+                </div>
+              </label>
+            </div>
+
+            <!-- ──────────────────────────────────────────── -->
+            <!-- GROUP 2: CUSTOMER PIPELINE                  -->
+            <!-- ──────────────────────────────────────────── -->
+            <div class="calc-group" role="group" aria-label="Customer pipeline services">
+              <div class="cg-label">// Customer Pipeline</div>
+
+              <label class="cs-row" role="listitem" aria-label="Online booking service">
+                <input type="checkbox" id="svc-booking" name="booking"
+                  data-setup="600" data-mo="0">
+                <div class="cs-info">
+                  <div class="cs-name">Online Booking Setup</div>
+                  <p class="cs-desc">Customers pick a slot themselves. No more phone tag.</p>
+                </div>
+                <div class="cs-price">
+                  <div class="cs-mo" style="font-size:15px;color:var(--text-3)">one-time</div>
+                  <div class="cs-mo-label">&nbsp;</div>
+                  <div class="cs-setup-price">$600 setup</div>
+                </div>
+              </label>
+
+              <label class="cs-row" role="listitem" aria-label="Quote and invoice follow-up service">
+                <input type="checkbox" id="svc-quotes" name="quotes"
+                  data-setup="400" data-mo="150">
+                <div class="cs-info">
+                  <div class="cs-name">Quote / Invoice Follow-Up</div>
+                  <p class="cs-desc">Chases quiet quotes and unpaid invoices for you.</p>
+                </div>
+                <div class="cs-price">
+                  <div class="cs-mo">$150</div>
+                  <div class="cs-mo-label">/mo</div>
+                  <div class="cs-setup-price">+ $400 setup</div>
+                </div>
+              </label>
+            </div>
+
+            <!-- ──────────────────────────────────────────── -->
+            <!-- GROUP 3: REPUTATION & VISIBILITY            -->
+            <!-- ──────────────────────────────────────────── -->
+            <div class="calc-group" role="group" aria-label="Reputation and visibility services">
+              <div class="cg-label">// Reputation &amp; Visibility</div>
+
+              <label class="cs-row" role="listitem" aria-label="Review automation service">
+                <input type="checkbox" id="svc-reviews" name="reviews"
+                  data-setup="300" data-mo="100">
+                <div class="cs-info">
+                  <div class="cs-name">Review Automation</div>
+                  <p class="cs-desc">After every completed job, the system texts asking for a Google review.</p>
+                </div>
+                <div class="cs-price">
+                  <div class="cs-mo">$100</div>
+                  <div class="cs-mo-label">/mo</div>
+                  <div class="cs-setup-price">+ $300 setup</div>
+                </div>
+              </label>
+
+              <label class="cs-row" role="listitem" aria-label="Monthly summary service">
+                <input type="checkbox" id="svc-summary" name="summary"
+                  data-setup="300" data-mo="50">
+                <div class="cs-info">
+                  <div class="cs-name">Monthly Summary</div>
+                  <p class="cs-desc">Once a month: one-page summary of calls caught and leads saved.</p>
+                </div>
+                <div class="cs-price">
+                  <div class="cs-mo">$50</div>
+                  <div class="cs-mo-label">/mo</div>
+                  <div class="cs-setup-price">+ $300 setup</div>
+                </div>
+              </label>
+            </div>
+
+            <!-- ──────────────────────────────────────────── -->
+            <!-- GROUP 4: ONLINE PRESENCE                    -->
+            <!-- ──────────────────────────────────────────── -->
+            <div class="calc-group" role="group" aria-label="Online presence services">
+              <div class="cg-label">// Online Presence</div>
+
+              <label class="cs-row" role="listitem" aria-label="Professional website service">
+                <input type="checkbox" id="svc-website" name="website"
+                  data-setup="900" data-mo="0">
+                <div class="cs-info">
+                  <div class="cs-name">Professional Website</div>
+                  <p class="cs-desc">A real site, not just a Facebook page.</p>
+                </div>
+                <div class="cs-price">
+                  <div class="cs-mo" style="font-size:15px;color:var(--text-3)">one-time</div>
+                  <div class="cs-mo-label">&nbsp;</div>
+                  <div class="cs-setup-price">$900 setup</div>
+                </div>
+              </label>
+
+              <label class="cs-row" role="listitem" aria-label="Business email setup service">
+                <input type="checkbox" id="svc-email" name="email"
+                  data-setup="250" data-mo="0">
+                <div class="cs-info">
+                  <div class="cs-name">Business Email Setup</div>
+                  <p class="cs-desc">Professional address on your own domain.</p>
+                </div>
+                <div class="cs-price">
+                  <div class="cs-mo" style="font-size:15px;color:var(--text-3)">one-time</div>
+                  <div class="cs-mo-label">&nbsp;</div>
+                  <div class="cs-setup-price">$250 setup</div>
+                </div>
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RIGHT: sticky estimate panel -->
+        <div class="calc-estimate-col">
+          <div class="calc-estimate-panel">
+
+            <!-- Running total — updates as boxes are checked -->
+            <div class="calc-total" aria-live="polite" aria-atomic="true">
+              <div class="ct-col">
+                <div class="ct-label">One-time build</div>
+                <div class="ct-val" id="ct-build">$500</div>
+                <div class="ct-note">// Exact confirmed on your call</div>
+              </div>
+              <div class="ct-col">
+                <div class="ct-label">Monthly retainer</div>
+                <div class="ct-val" id="ct-mo">$200<span style="font-family:'DM Sans',sans-serif;font-size:18px;color:var(--text-3)">/mo</span></div>
+                <div class="ct-note">// Cancel anytime if it stops making sense</div>
+              </div>
+            </div>
+
+            <!-- Mini price promise in estimate panel -->
+            <div class="calc-estimate-promise">
+              <span class="cp-label">// Price Promise</span>
+              Bundle pricing applies automatically — you always pay the lower rate.
+            </div>
+
+            <!-- CTA at end of calculator (audit fix #10) -->
+            <div class="calc-cta-row">
+              <a href="https://cal.com/diego-valdes/call" class="btn-primary" aria-label="Book a call to confirm your custom estimate">
+                Price looks right? Book a 15-min call →
+              </a>
+              <p class="calc-cta-note">// Final price depends on your exact setup — confirmed on the call, no surprises.</p>
+            </div>
+
+          </div>
+        </div>
+
       </div>
-      <div class="reveal d1">
-        <h2>Built by someone who's done the work.</h2>
-        <p>I'm Diego. I've worked in the trades — hands-on, in the field — so I understand how these businesses actually run, and how easily a missed call or a forgotten follow-up can quietly cost you real money.</p>
-        <p>So I learned to build the systems that fix it. No corporate sales team, no jargon, no software you'll never figure out — just a local guy who gets your world and builds the tech to make it run smoother.</p>
-        <p>You handle the work. I'll handle the office.</p>
-        <div class="sig">— Diego Valdes, Valdes Systems</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     SERVICES BRIDGE — replaces Full Menu 6-service grid
+     Audit fix #9: two sentences. No grid of cards.
+     Wedge strategy preserved: start with one thing, expand later.
+════════════════════════════════════════════════════════ -->
+<section class="bridge-section" id="bridge" aria-labelledby="bridge-heading">
+  <div class="sec-para-layer" id="bridgeParaLayer" aria-hidden="true">
+    <div class="para-grid"></div>
+    <div class="para-midground" data-speed="0.50">
+      <span class="anno" style="top:12%;left:5%">ROADMAP</span>
+      <span class="anno" style="top:48%;right:6%">FUTURE · OPT</span>
+      <span class="anno" style="bottom:15%;left:4%">SEE PHASE 2</span>
+    </div>
+    <div class="para-closeground" data-speed="0.75">
+      <span class="anno-lg" style="top:55%;right:5%">DETAIL · GROWTH PATH</span>
+    </div>
+  </div>
+  <div class="inner">
+    <div class="sec-label reveal">// The bigger picture</div>
+    <div class="bridge-box reveal">
+      <p>
+        <strong>We start with missed-call text-back</strong> — the simplest system, the fastest ROI.
+        As your business grows, we layer in follow-up automation, review requests, booking, and more. One step at a time.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     FAQ — Objection removal before final CTA
+════════════════════════════════════════════════════════ -->
+<section class="faq-section" id="faq" aria-labelledby="faq-heading">
+  <div class="sec-para-layer" id="faqParaLayer" aria-hidden="true">
+    <div class="para-grid"></div>
+    <div class="para-midground" data-speed="0.50">
+      <span class="anno" style="top:8%;left:5%">FAQ · REV 01</span>
+      <span class="anno" style="top:42%;right:6%">QUESTIONS · 06</span>
+      <span class="anno" style="bottom:18%;left:4%">SEE ANSWER</span>
+      <span class="anno" style="top:72%;right:8%">NOTE · COMMON</span>
+    </div>
+    <div class="para-closeground" data-speed="0.75">
+      <span class="anno-lg" style="top:55%;right:5%">DETAIL · OBJECTION REMOVAL</span>
+    </div>
+  </div>
+  <div class="inner">
+    <div class="sec-label reveal">// Common Questions</div>
+    <h2 class="reveal" id="faq-heading">Before you book — the <em>questions</em> everyone has.</h2>
+    <div class="faq-list" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Do I need to learn new software or apps?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" aria-hidden="true">
+          <p>No. Your phone works the way it always has. The system runs in the background — you get calls and texts on your own phone, just like now. There's no dashboard to log into, no app to download. You only hear from me when something needs your attention.</p>
+        </div>
       </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Will this work with my current phone number?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" aria-hidden="true">
+          <p>Yes. We keep your existing number — customers still call the same line they always have. The system layers on top of it. If you ever want to leave, your number stays yours.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          What if my customer texts back after the auto-text?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" aria-hidden="true">
+          <p>You get the reply on your normal phone, like any other text. The system doesn't keep replying forever — it sends ONE text-back to start the conversation, then it's you and your customer talking normally. No bot pretending to be you.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          How fast can you have it running?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" aria-hidden="true">
+          <p>Most setups go live within 2–3 business days from the time we hop on a call. There's no contract to sign, no IT vendor to coordinate with. I do the build, I send you a test, we go live.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          What if I want to cancel?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" aria-hidden="true">
+          <p>Cancel anytime. No contracts, no termination fees. You give me 7 days notice and I shut it down — you keep your number, you keep your customer history. If it's not working for you, I'd rather you tell me than feel stuck.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          Will my customers know they're getting an auto-text?
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" aria-hidden="true">
+          <p>The text is written in your voice ("Hey, this is Mike from Kingsland Roofing...") and sent within 10 seconds — so it just feels like you texted them back quickly. Most customers never realize it's automated. If you'd rather be upfront ("This is an auto-text — Mike will follow up shortly"), that's a one-line change anytime.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<section class="block contact" id="contact">
-  <div class="wrap">
-    <h2>Let's plug the <em>leak.</em></h2>
-    <p>A free 15-minute call. I'll show you exactly how it works for your business — and if it's not a fit, I'll tell you straight. No pressure, no pitch.</p>
-    <div class="hero-cta" style="margin-bottom:18px">
-      <a href="https://cal.com/diego-valdes/call" class="btn btn-orange" data-location="contact">📅 Book your free call</a>
+<!-- ════════════════════════════════════════════════════════
+     ABOUT — Big V founder portrait block
+     No photo needed. The V inside a blueprint frame IS the identity.
+     Corner brackets at all 4 corners (drafting registration marks).
+     Dimension line under V baseline + angle annotation on the stroke.
+     "DIEGO VALDES · FOUNDER" label below the frame.
+     Geographic: based in Saint Marys, works wherever your phone rings.
+     Sheet notation: "SHEET 05 — ABOUT · DWG-05"
+════════════════════════════════════════════════════════ -->
+<section class="about-section" id="about" aria-labelledby="about-heading">
+  <!-- FIX 5 — parallax layer behind about content -->
+  <div class="sec-para-layer" id="aboutParaLayer" aria-hidden="true">
+    <div class="para-grid"></div>
+    <div class="para-midground" data-speed="0.50">
+      <span class="anno" style="top:9%;left:4%">BIO · DRAWN BY</span>
+      <span class="anno" style="top:40%;right:6%">EST 2026</span>
+      <span class="anno" style="bottom:24%;left:4%">FIELD · TRADES</span>
+      <span class="anno" style="top:65%;right:5%">SHEET 05 · ABOUT</span>
     </div>
-    <div class="hero-cta">
-      <a href="tel:+13172739750" class="btn btn-ghost">📞 Or call/text (317) 273-9750</a>
-      <a href="mailto:diego@valdessystems.com" class="btn btn-ghost">✉ diego@valdessystems.com</a>
+    <div class="para-closeground" data-speed="0.75">
+      <span class="anno-lg" style="top:50%;left:6%">DETAIL · FOUNDER</span>
     </div>
-    <div class="reach">Serving Saint Marys, Kingsland, Jacksonville &amp; the surrounding area</div>
+  </div>
+  <div class="inner">
+    <div class="sec-label reveal">// About</div>
+    <div class="about-layout">
+
+      <!-- Stacked wordmark — enlarged brand mark as founder stand-in (CHANGE 1) -->
+      <div class="about-stacked-wordmark reveal" role="img" aria-label="Valdes Systems — Diego Valdes founder mark">
+        <div class="awm-corner-tr" aria-hidden="true"></div>
+        <div class="awm-corner-bl" aria-hidden="true"></div>
+        <div class="awm-inner">
+          <div class="awm-valdes">VALDES</div>
+          <svg class="awm-divider" viewBox="0 0 280 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="1" y1="1" x2="1" y2="11" stroke="#ED8B2F" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="1" y1="6" x2="279" y2="6" stroke="#ED8B2F" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="279" y1="1" x2="279" y2="11" stroke="#ED8B2F" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <div class="awm-systems">SYSTEMS</div>
+        </div>
+        <div class="awm-dim-label" aria-hidden="true" data-reverse-scroll="0.07">DWG-01 · WORDMARK · EST. 2026 · SAINT MARYS, GA</div>
+      </div>
+
+      <!-- About copy -->
+      <div class="about-content reveal d1">
+        <div class="about-name" id="about-heading">Diego Valdes</div>
+        <div class="about-role">Founder · Valdes Systems</div>
+        <!-- "You handle the work. I'll handle the office." — LOCKED per audit -->
+        <p class="about-tagline">You handle the work.<br>I'll handle the office.</p>
+        <p class="about-body">
+          I've done the work — handyman jobs, job sites, the whole thing. I know what it's like to miss a call because you're under a sink or up on a roof, and I know exactly what that missed call costs you.
+          <br><br>
+          I got into automation to fix that problem, for myself and for guys like me. Every system I build is simple enough to explain in two minutes and strong enough to pay for itself on the first job it catches.
+          <br><br>
+          <strong>I'm in Saint Marys. The system runs anywhere your phone rings.</strong> When you have a question, you reach me directly — not a ticketing system, not a chatbot.
+        </p>
+      </div>
+
+    </div>
   </div>
 </section>
 
+<!-- ════════════════════════════════════════════════════════
+     FINAL CTA — "Let's plug the leak."
+     "LEAK" in orange. Best closing CTA line — LOCKED.
+     Contact row: (317) 273-9750 + email.
+     Geographic: local but not limited (Diego's 5/30 note).
+════════════════════════════════════════════════════════ -->
+<section class="cta-section" id="contact" aria-labelledby="cta-heading">
+  <div class="sec-para-layer" id="ctaParaLayer" aria-hidden="true">
+    <div class="para-grid"></div>
+    <div class="para-midground" data-speed="0.50">
+      <span class="anno" style="top:10%;left:4%">FINAL · BOOK</span>
+      <span class="anno" style="top:45%;right:5%">CONTACT INFO</span>
+      <span class="anno" style="bottom:20%;left:5%">STATUS · READY</span>
+    </div>
+    <div class="para-closeground" data-speed="0.75">
+      <span class="anno-lg" style="top:60%;right:5%">SHEET 06 · CONTACT</span>
+    </div>
+  </div>
+  <div class="inner">
+    <div class="cta-box reveal">
+      <!-- "Let's plug the leak." — earned metaphor, LOCKED per audit -->
+      <h2 id="cta-heading">Let's plug the <em>leak.</em></h2>
+      <p>
+        A free 15-minute call. You tell me about your business, I tell you exactly what I'd build.
+        No pitch, no pressure. If it doesn't make sense, we shake hands and move on.
+      </p>
+      <div class="cta-actions">
+        <a href="https://cal.com/diego-valdes/call" class="btn-primary" aria-label="Book a free 15-minute call">
+          Book a free 15-min call →
+        </a>
+        <span class="cta-reach-link">or reach out directly →</span>
+      </div>
+      <div class="cta-contacts" id="cta-contact">
+        <a href="tel:+13172739750" class="cta-contact" aria-label="Call or text Diego">
+          Call/Text: (317) 273-9750
+        </a>
+        <a href="mailto:diego@valdessystems.com" class="cta-contact" aria-label="Email Diego">
+          diego@valdessystems.com
+        </a>
+      </div>
+      <!-- Geographic: local-rooted, not local-limited (Diego's 5/30 note) -->
+      <p class="cta-area">
+        // Local to Saint Marys, Kingsland, and Jacksonville — works wherever your phone does.
+      </p>
+    </div>
+  </div>
+</section>
+
+</div><!-- .page -->
+
+<!-- FOOTER — "AUTOMATION FOR THE TRADES · SAINT MARYS, GA" preserved from original -->
 <footer>
-  <div class="wrap">
-    <svg width="180" height="74" viewBox="0 0 260 100" style="flex-shrink:0">
-      <text x="130" y="42" fill="#fff" font-family="Saira Condensed" font-size="40" font-weight="700" text-anchor="middle" letter-spacing="3">VALDES</text>
-      <line x1="55" y1="55" x2="205" y2="55" stroke="#f6831f" stroke-width="2"/>
-      <path d="M55 51 L55 59 M205 51 L205 59" stroke="#f6831f" stroke-width="2"/>
-      <text x="130" y="78" fill="#f6831f" font-family="Azeret Mono" font-size="14" text-anchor="middle" letter-spacing="7">SYSTEMS</text>
-    </svg>
-    <div class="mono">© 2026 VALDES SYSTEMS · AUTOMATION FOR THE TRADES · SAINT MARYS, GA</div>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-brand">Valdes Systems</div>
+      <div class="footer-tagline">Automation for the Trades · Saint Marys, GA</div>
+    </div>
+    <div class="footer-right">
+      <div>© 2026 Valdes Systems</div>
+      <div><a href="mailto:diego@valdessystems.com">diego@valdessystems.com</a></div>
+      <div><a href="tel:+13172739750">(317) 273-9750</a></div>
+      <div><a href="https://valdessystems.com">valdessystems.com</a></div>
+      <div class="footer-legal-row">
+        <button class="footer-legal-link" data-open-modal="privacy">Privacy</button>
+        <span class="footer-legal-sep">·</span>
+        <button class="footer-legal-link" data-open-modal="terms">Terms</button>
+      </div>
+    </div>
   </div>
 </footer>
 
+<!-- ════════════════════════════════════════════════════════
+     SCRIPTS — all inline, no external dependencies
+════════════════════════════════════════════════════════ -->
 <script>
-  // replay-on-scroll: add .in when entering, remove when leaving (both directions)
-  const obs=new IntersectionObserver((es)=>{
-    es.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in');} else {e.target.classList.remove('in');} });
-  },{threshold:.15});
-  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-  const SERVICES=[
-    {id:'mct',nm:'Missed-Call Text-Back',ds:'Auto-text every missed call in seconds',build:500,mo:200},
-    {id:'follow',nm:'Lead Follow-Up System',ds:'Nurture leads that don\u2019t book day one',build:400,mo:150},
-    {id:'review',nm:'Review Automation',ds:'Auto-request Google reviews after a job',build:300,mo:100},
-    {id:'booking',nm:'Online Booking Setup',ds:'Let customers book without phone tag',build:600,mo:0},
-    {id:'quote',nm:'Quote / Invoice Follow-Up',ds:'Chase quiet quotes & unpaid invoices',build:400,mo:150},
-    {id:'website',nm:'Professional Website',ds:'A real site, not just a Facebook page',build:900,mo:0},
-    {id:'email',nm:'Business Email Setup',ds:'Professional address on your own domain',build:250,mo:0},
-    {id:'reporting',nm:'Reporting Dashboard',ds:'See the jobs the system saved you',build:300,mo:50},
-  ];
-  const BUNDLES=[
-    {name:'Full System bundle',items:['mct','follow','review','booking','quote','reporting'],build:2000,mo:500},
-    {name:'Growth bundle',items:['mct','follow','review'],build:1000,mo:350},
-    {name:'Starter bundle',items:['mct'],build:500,mo:200},
-  ];
-  const selected=new Set();
-  const list=document.getElementById('svc-list');
-  const check='<svg viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-  SERVICES.forEach(s=>{
-    const row=document.createElement('div');
-    row.className='svc';row.dataset.id=s.id;
-    const moTxt=s.mo>0?(' + $'+s.mo+'/mo'):'';
-    row.innerHTML='<div class="box">'+check+'</div><div class="info"><div class="nm">'+s.nm+'</div><div class="ds">'+s.ds+'</div></div><div class="pr">$'+s.build+moTxt+'</div>';
-    row.addEventListener('click',()=>{
-      const wasOn=selected.has(s.id);
-      row.classList.toggle('on');
-      wasOn?selected.delete(s.id):selected.add(s.id);
-      posthog.capture('cart_service_toggled',{service:s.nm,selected:!wasOn});
-      render();
-    });
-    list.appendChild(row);
+/* ── SCROLL REVEAL — will-change managed around transition ── */
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.willChange = 'transform, opacity';
+      e.target.classList.add('visible');
+      e.target.addEventListener('transitionend', () => {
+        e.target.style.willChange = 'auto';
+      }, { once: true });
+    }
   });
-  // ---- live missed-call demo ----
-  (function(){
-    const biz=document.getElementById('d-biz'), name=document.getElementById('d-name'),
-          phone=document.getElementById('d-phone'), go=document.getElementById('d-go'),
-          status=document.getElementById('d-status'), call=document.getElementById('p-call'),
-          msgs=document.getElementById('p-msgs'), mname=document.getElementById('p-mname'),
-          empty=document.getElementById('p-empty'), callernum=document.getElementById('p-callernum');
-    if(!go) return;
-    function fmtPhone(v){
-      const d=v.replace(/\D/g,'').slice(0,10);
-      if(d.length<4) return d;
-      if(d.length<7) return '('+d.slice(0,3)+') '+d.slice(3);
-      return '('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6);
-    }
-    phone.addEventListener('input',()=>{phone.value=fmtPhone(phone.value);});
-    const wait=ms=>new Promise(r=>setTimeout(r,ms));
-    let running=false;
-    go.addEventListener('click',async()=>{
-      if(running) return;
-      const b=biz.value.trim()||'Your Business';
-      const n=name.value.trim()||'there';
-      const p=phone.value.trim()||'(555) 123-4567';
-      running=true; go.disabled=true;
-      posthog.capture('demo_simulated',{business_name:b,phone_provided:phone.value.trim().length>0});
-      // reset
-      msgs.querySelectorAll('.bubble,.typing').forEach(e=>e.remove());
-      if(empty) empty.style.display='none';
-      mname.textContent=b; mname.parentElement.style.opacity='1';
-      callernum.textContent=p;
-      // 1. incoming call
-      status.innerHTML='<span class="live">● Call coming in...</span>';
-      call.classList.add('show');
-      await wait(2600);
-      // 2. missed (call screen fades, you didn't answer)
-      call.classList.remove('show');
-      status.innerHTML='<span class="live">● Missed call — you were on a job.</span>';
-      await wait(1400);
-      // 3. system typing
-      status.innerHTML='<span class="live">● Valdes System responding automatically...</span>';
-      const typing=document.createElement('div');
-      typing.className='typing'; typing.innerHTML='<span></span><span></span><span></span>';
-      msgs.appendChild(typing); requestAnimationFrame(()=>typing.classList.add('show'));
-      await wait(1800);
-      typing.remove();
-      // 4. auto text-back appears
-      const t=new Date(); const hh=((t.getHours()%12)||12); const mm=String(t.getMinutes()).padStart(2,'0');
-      const stamp=hh+':'+mm+(t.getHours()<12?' AM':' PM');
-      const b1=document.createElement('div');
-      b1.className='bubble them';
-      b1.innerHTML='Hey '+esc(n)+'! This is '+esc(b)+' — sorry we missed your call. What can we help you with? We\u2019ll get right back to you. <span class="tstamp">'+stamp+'</span>';
-      msgs.appendChild(b1); requestAnimationFrame(()=>b1.classList.add('show'));
-      status.innerHTML='<span class="live">✓ Text sent in under 10 seconds.</span>';
-      await wait(2400);
-      // 5. customer replies (shows it keeps the lead warm)
-      const typing2=document.createElement('div');
-      typing2.className='typing'; typing2.innerHTML='<span></span><span></span><span></span>';
-      msgs.appendChild(typing2); requestAnimationFrame(()=>typing2.classList.add('show'));
-      await wait(1600); typing2.remove();
-      const b2=document.createElement('div');
-      b2.className='bubble you';
-      b2.innerHTML='Oh great, yes! I need a quote for next week. <span class="tstamp">'+stamp+'</span>';
-      msgs.appendChild(b2); requestAnimationFrame(()=>b2.classList.add('show'));
-      status.innerHTML='✓ Lead captured — a job you\u2019d have lost is now booked. <span class="live">That\u2019s the whole point.</span>';
-      go.disabled=false; running=false;
+}, { threshold: 0.07, rootMargin: '0px 0px -36px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+/* ── PARALLAX — FIX 5: rAF-driven, transform only ───────────
+   Hero: Layer A (grid, 0.35x) + Layer B (annotations, 0.65x).
+   Pricing + About: para-grid layer at 0.4x.
+   Disabled on mobile (<640px) and prefers-reduced-motion.
+   Stops animating layers once section is 1.5× vh past viewport.
+───────────────────────────────────────────────────────────── */
+(function(){
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const mobile  = () => window.innerWidth < 640;
+  if (reduced) return;
+
+  /* --- Hero parallax --- */
+  const layerA = document.getElementById('heroLayerA');
+  const layerB = document.getElementById('heroLayerB');
+  const hero   = document.querySelector('.hero');
+
+  /* --- Section parallax targets --- */
+  const secLayers = [
+    { el: document.getElementById('builtForParaLayer'),   section: document.getElementById('built-for'),    speed: 0.35 },
+    { el: document.getElementById('howItWorksParaLayer'), section: document.getElementById('how-it-works'), speed: 0.35 },
+    { el: document.getElementById('demoParaLayer'),       section: document.getElementById('demo'),         speed: 0.35 },
+    { el: document.getElementById('pricingParaLayer'),    section: document.getElementById('pricing'),      speed: 0.40 },
+    { el: document.getElementById('calcParaLayer'),       section: document.getElementById('calculator'),   speed: 0.35 },
+    { el: document.getElementById('bridgeParaLayer'),     section: document.getElementById('bridge'),       speed: 0.35 },
+    { el: document.getElementById('faqParaLayer'),        section: document.getElementById('faq'),          speed: 0.35 },
+    { el: document.getElementById('aboutParaLayer'),      section: document.getElementById('about'),        speed: 0.40 },
+    { el: document.getElementById('ctaParaLayer'),        section: document.getElementById('contact'),      speed: 0.35 },
+  ].filter(t => t.el && t.section);
+
+  /* will-change management: grid + mid + close layers, only while section visible */
+  const secObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      const wc = e.isIntersecting ? 'transform' : 'auto';
+      const grid = e.target.querySelector('.para-grid');
+      if (grid) grid.style.willChange = wc;
+      e.target.querySelectorAll('[data-speed]').forEach(l => { l.style.willChange = wc; });
     });
-    function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML;}
-  })();
-  function render(){
-    const cl=document.getElementById('cart-list');
-    const hint=document.getElementById('bundle-hint');
-    if(selected.size===0){
-      cl.innerHTML='<div class="cart-empty">No services selected yet — tap some on the left.</div>';
-      document.getElementById('t-build').textContent='$0';
-      document.getElementById('t-mo').innerHTML='$0<small>/mo</small>';
-      hint.classList.remove('show');return;
+  }, { threshold: 0 });
+  secLayers.forEach(t => secObs.observe(t.section));
+
+  let heroVisible = true;
+  const heroObs = new IntersectionObserver(entries => {
+    heroVisible = entries[0].isIntersecting;
+    if (layerA) layerA.style.willChange = heroVisible ? 'transform' : 'auto';
+    if (layerB) layerB.style.willChange = heroVisible ? 'transform' : 'auto';
+  }, { threshold: 0 });
+  if (hero) heroObs.observe(hero);
+
+  /* Reverse-scroll floaters — cached once, animated each tick */
+  const reverseEls = Array.from(document.querySelectorAll('[data-reverse-scroll]'))
+    .map(el => ({ el, speed: parseFloat(el.dataset.reverseScroll) }));
+
+  let ticking = false;
+
+  function tick() {
+    ticking = false;
+    if (mobile()) return;
+
+    const y  = window.scrollY;
+    const vh = window.innerHeight;
+
+    /* Hero layers */
+    if (layerA && layerB && heroVisible && y <= vh * 1.5) {
+      layerA.style.transform = `translateY(${y * 0.35}px)`;
+      layerB.style.transform = `translateY(${y * 0.65}px)`;
     }
-    let build=0,mo=0,rows='';
-    SERVICES.forEach(s=>{if(selected.has(s.id)){build+=s.build;mo+=s.mo;const m=s.mo>0?(' + $'+s.mo+'/mo'):'';rows+='<div class="cart-row"><span>'+s.nm+'</span><span>$'+s.build+m+'</span></div>';}});
-    cl.innerHTML=rows;
-    // Find the LARGEST bundle whose items are all selected AND which has 2+ items
-    // (single-item "Starter" only applies when mct is the ONLY core pick — handled by size).
-    let applied=null;
-    for(const b of BUNDLES){
-      if(b.items.length>=2 && b.items.every(i=>selected.has(i))){applied=b;break;}
-    }
-    // Starter: only label as a bundle when selection is exactly {mct}
-    if(!applied && selected.size===1 && selected.has('mct')){
-      applied=BUNDLES.find(b=>b.name==='Starter bundle');
-    }
-    if(applied){
-      let eb=0,em=0;
-      SERVICES.forEach(s=>{if(selected.has(s.id)&&!applied.items.includes(s.id)){eb+=s.build;em+=s.mo;}});
-      build=applied.build+eb;mo=applied.mo+em;
-      const extra = (eb>0||em>0) ? ' (plus your add-ons)' : '';
-      hint.textContent='\u2713 Your selection includes the '+applied.name+' — applied automatically at the bundle price'+extra+'. You\u2019re getting the best deal.';
-      hint.classList.add('show');
-    } else { hint.classList.remove('show'); }
-    document.getElementById('t-build').textContent='$'+build.toLocaleString();
-    document.getElementById('t-mo').innerHTML='$'+mo.toLocaleString()+'<small>/mo</small>';
+
+    /* Section layers — Layer A (grid) + Layers B/C (mid + close) */
+    secLayers.forEach(({ el, section, speed }) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.bottom < -vh * 0.5 || rect.top > vh * 1.5) return;
+      const offset = (rect.top + rect.height / 2 - vh / 2);
+      /* Layer A — para-grid (deepest, slowest) */
+      const grid = el.querySelector('.para-grid');
+      if (grid) grid.style.transform = `translateY(${-offset * speed}px)`;
+      /* Layers B + C — read speed from data-speed attribute */
+      el.querySelectorAll('[data-speed]').forEach(layer => {
+        const s = parseFloat(layer.dataset.speed);
+        layer.style.transform = `translateY(${-offset * s}px)`;
+      });
+    });
+
+    /* Reverse-scroll floaters — move against scroll direction */
+    reverseEls.forEach(({ el, speed }) => {
+      el.style.transform = `translateY(${-y * speed}px)`;
+    });
   }
 
-  // book_call_clicked — all four CTA locations
-  document.querySelectorAll('a[data-location]').forEach(el=>{
-    el.addEventListener('click',()=>{
-      posthog.capture('book_call_clicked',{location:el.dataset.location});
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(tick); ticking = true; }
+  }, { passive: true });
+
+  /* Initial call to set position on load */
+  tick();
+})();
+
+/* ── ACTIVE NAV LINK ────────────────────────────────────── */
+(function(){
+  const sections = document.querySelectorAll('section[id]');
+  const links    = document.querySelectorAll('.nav-links a');
+  const sync = () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 90) cur = s.id; });
+    links.forEach(a => {
+      const id = a.getAttribute('href').replace('#','');
+      a.classList.toggle('active', id === cur);
+    });
+  };
+  window.addEventListener('scroll', sync, { passive: true });
+  sync();
+})();
+
+/* ── DEMO FORM — iPhone animation ────────────────────────── */
+(function(){
+  const form        = document.getElementById('demo-form');
+  const bizInput    = document.getElementById('demo-biz');
+  const iContact    = document.getElementById('iphone-contact-name');
+  const placeholder = document.getElementById('iphone-placeholder');
+  const typing1     = document.getElementById('iphone-typing');
+  const typing2     = document.getElementById('iphone-typing2');
+  const msg1        = document.getElementById('sms-msg1');
+  const ts1         = document.getElementById('sms-ts1');
+  const msg2        = document.getElementById('sms-msg2');
+  const ts2         = document.getElementById('sms-ts2');
+  const msg3        = document.getElementById('sms-msg3');
+  const ts3         = document.getElementById('sms-ts3');
+  const footerNote  = document.getElementById('demo-footer-note');
+  let fired = false;
+
+  if (bizInput) {
+    bizInput.addEventListener('input', () => {
+      const v = bizInput.value.trim();
+      if (iContact) iContact.textContent = v || 'Your Business';
+      if (msg1) msg1.textContent = `Hey, this is ${v || 'Your Business'} — sorry we missed you! What do you need a hand with? We'll call you right back.`;
+    });
+  }
+
+  const phoneInput = document.getElementById('demo-phone');
+  if (phoneInput) {
+    phoneInput.setAttribute('inputmode', 'tel');
+    phoneInput.setAttribute('maxlength', '14');
+    phoneInput.addEventListener('input', (ev) => {
+      let digits = ev.target.value.replace(/\D/g, '').slice(0, 10);
+      let formatted = digits;
+      if (digits.length >= 7) formatted = `(${digits.slice(0,3)}) ${digits.slice(3,6)}-${digits.slice(6,10)}`;
+      else if (digits.length >= 4) formatted = `(${digits.slice(0,3)}) ${digits.slice(3)}`;
+      else if (digits.length >= 1) formatted = `(${digits}`;
+      ev.target.value = formatted;
+    });
+  }
+
+  if (!form) return;
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (fired) return;
+    fired = true;
+
+    if (placeholder) placeholder.style.display = 'none';
+
+    // Step 1 — business typing
+    if (typing1) typing1.classList.add('show');
+
+    // Step 2 (1.2s) — show business auto-text, start customer delay
+    setTimeout(() => {
+      if (typing1) typing1.classList.remove('show');
+      if (msg1) msg1.classList.add('show');
+      if (ts1)  ts1.classList.add('show');
+
+      // Step 3 (2s later) — customer reply appears
+      setTimeout(() => {
+        if (msg2) msg2.classList.add('show');
+        if (ts2)  ts2.classList.add('show');
+
+        // Step 4 (0.8s later) — business typing again
+        setTimeout(() => {
+          if (typing2) typing2.classList.add('show');
+
+          // Step 5 (1.4s later) — business follow-up + footer
+          setTimeout(() => {
+            if (typing2) typing2.classList.remove('show');
+            if (msg3) msg3.classList.add('show');
+            if (ts3)  ts3.classList.add('show');
+            if (footerNote) footerNote.classList.add('show');
+          }, 1400);
+        }, 800);
+      }, 2000);
+    }, 1200);
+  });
+})();
+
+/* ── "NOT SURE?" HELPER ─────────────────────────────────── */
+(function(){
+  const trigger = document.getElementById('helper-trigger');
+  const panel   = document.getElementById('helper-panel');
+  if (!trigger || !panel) return;
+
+  trigger.addEventListener('click', () => {
+    const open = panel.classList.toggle('open');
+    trigger.classList.toggle('open', open);
+    trigger.setAttribute('aria-expanded', open);
+    panel.setAttribute('aria-hidden', !open);
+  });
+
+  // Question answer logic
+  let q1 = null, q2 = null;
+
+  document.querySelectorAll('.helper-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const q = btn.dataset.q;
+      const val = btn.dataset.val;
+
+      // Deselect siblings in same group
+      document.querySelectorAll(`.helper-opt[data-q="${q}"]`).forEach(b => b.classList.remove('sel'));
+      btn.classList.add('sel');
+
+      if (q === '1') q1 = val;
+      if (q === '2') q2 = val;
+
+      if (q1 && q2) showHelperResult(q1, q2);
     });
   });
 
-  // phone_clicked / email_clicked
-  const phoneLink=document.querySelector('a[href^="tel:"]');
-  if(phoneLink) phoneLink.addEventListener('click',()=>posthog.capture('phone_clicked'));
-  const emailLink=document.querySelector('a[href^="mailto:"]');
-  if(emailLink) emailLink.addEventListener('click',()=>posthog.capture('email_clicked'));
+  function showHelperResult(q1, q2) {
+    const result  = document.getElementById('helper-result');
+    const recText = document.getElementById('helper-rec-text');
+    if (!result || !recText) return;
 
-  // scroll depth at 25 / 50 / 75 / 100%
-  (function(){
-    const marks=[25,50,75,100];const fired=new Set();
-    function onScroll(){
-      const scrolled=window.scrollY+window.innerHeight;
-      const total=document.documentElement.scrollHeight;
-      const pct=Math.round((scrolled/total)*100);
-      marks.forEach(m=>{if(pct>=m&&!fired.has(m)){fired.add(m);posthog.capture('scroll_depth',{percent:m});}});
-      if(fired.size===marks.length)window.removeEventListener('scroll',onScroll);
+    // Pre-check logic: answer determines which services get checked
+    const tb    = document.getElementById('svc-textback');
+    const fu    = document.getElementById('svc-followup');
+    const rev   = document.getElementById('svc-reviews');
+    const book  = document.getElementById('svc-booking');
+    const quot  = document.getElementById('svc-quotes');
+    const summ  = document.getElementById('svc-summary');
+    const web   = document.getElementById('svc-website');
+    const email = document.getElementById('svc-email');
+
+    // Reset all to unchecked first, then apply recommendation
+    [tb, fu, rev, book, quot, summ, web, email].forEach(el => { if (el) el.checked = false; });
+
+    if (q2 === 'just-calls') {
+      // Starter — just text-back
+      if (tb) tb.checked = true;
+      recText.textContent = 'The Starter is your best starting point — text-back alone will catch the leads you\'re losing. I\'ve checked it below.';
+    } else if (q2 === 'calls-reviews') {
+      // Growth
+      if (tb)  tb.checked  = true;
+      if (fu)  fu.checked  = true;
+      if (rev) rev.checked = true;
+      if (summ) summ.checked = true;
+      recText.textContent = 'You need Growth-level coverage — text-back, follow-up, and reviews. That\'s what I\'ve checked below.';
+    } else if (q2 === 'all') {
+      // Full System
+      [tb, fu, rev, book, quot, summ].forEach(el => { if (el) el.checked = true; });
+      recText.textContent = 'The Full System covers everything you mentioned. All services checked below — uncheck anything that doesn\'t fit your timeline.';
     }
-    window.addEventListener('scroll',onScroll,{passive:true});
-  })();
+
+    updateCalcTotal();
+    result.classList.add('show');
+
+    // Scroll to calculator
+    setTimeout(() => {
+      document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 200);
+  }
+})();
+
+/* ── CALCULATOR — live price total ───────────────────────── */
+function updateCalcTotal() {
+  const checkboxes = document.querySelectorAll('.calc-services input[type="checkbox"]');
+  let setup = 0, mo = 0;
+  checkboxes.forEach(cb => {
+    if (cb.checked) {
+      setup += parseInt(cb.dataset.setup || 0, 10);
+      mo    += parseInt(cb.dataset.mo    || 0, 10);
+    }
+  });
+  const buildEl = document.getElementById('ct-build');
+  const moEl    = document.getElementById('ct-mo');
+  if (buildEl) buildEl.innerHTML = `$${setup.toLocaleString()}`;
+  if (moEl)    moEl.innerHTML    = `$${mo.toLocaleString()}<span style="font-family:'DM Sans',sans-serif;font-size:18px;color:var(--text-3)">/mo</span>`;
+}
+
+document.querySelectorAll('.calc-services input[type="checkbox"]').forEach(cb => {
+  cb.addEventListener('change', updateCalcTotal);
+});
+// Run once on load to show initial checked state
+updateCalcTotal();
+
+/* ── FAQ ACCORDION ──────────────────────────────────────── */
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.faq-question.open').forEach(other => {
+      if (other !== btn) {
+        other.classList.remove('open');
+        other.setAttribute('aria-expanded', 'false');
+        const otherAnswer = other.nextElementSibling;
+        if (otherAnswer) {
+          otherAnswer.classList.remove('open');
+          otherAnswer.setAttribute('aria-hidden', 'true');
+        }
+      }
+    });
+    const open = btn.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    const answer = btn.nextElementSibling;
+    if (answer) {
+      answer.classList.toggle('open', open);
+      answer.setAttribute('aria-hidden', !open);
+    }
+  });
+});
 </script>
+
+<!-- ════════════════════════════════════════════════════════
+     LEGAL MODALS — Privacy + Terms
+════════════════════════════════════════════════════════ -->
+<div class="legal-modal" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-heading" aria-hidden="true">
+  <div class="legal-modal-overlay" data-close-modal></div>
+  <div class="legal-modal-content">
+    <nav aria-label="Main navigation" class="modal-nav">
+      <div class="nav-inner">
+        <a href="#top" class="nav-brand" data-close-modal aria-label="Valdes Systems — home">
+          <div class="nav-stacked-wordmark">
+            <span class="nsw-valdes">VALDES</span>
+            <svg class="nsw-divider" viewBox="0 0 80 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <line x1="0.75" y1="0.75" x2="0.75" y2="9.25" stroke="#ED8B2F" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="0.75" y1="5" x2="79.25" y2="5" stroke="#ED8B2F" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="79.25" y1="0.75" x2="79.25" y2="9.25" stroke="#ED8B2F" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="nsw-systems">SYSTEMS</span>
+          </div>
+        </a>
+        <div class="nav-links" role="list">
+          <a href="#how-it-works" data-close-modal role="listitem">How it works</a>
+          <a href="#demo" data-close-modal role="listitem">Live demo</a>
+          <a href="#pricing" data-close-modal role="listitem">Pricing</a>
+          <a href="#calculator" data-close-modal role="listitem">Estimate</a>
+          <a href="#faq" data-close-modal role="listitem">FAQ</a>
+          <a href="#about" data-close-modal role="listitem">About</a>
+        </div>
+        <a href="https://cal.com/diego-valdes/call" class="nav-cta" aria-label="Book a free 15-minute call">Book a Call</a>
+      </div>
+    </nav>
+    <button class="legal-modal-close" data-close-modal aria-label="Close">✕</button>
+    <div class="legal-modal-body">
+      <h1 id="privacy-modal-heading">Privacy</h1>
+      <p class="legal-meta">// LAST UPDATED · MAY 2026</p>
+      <p class="legal-lead"><strong>Short version:</strong> I don't sell your data. I don't share it with marketers. I use what you give me to do my job — that's it.</p>
+      <p class="legal-lead"><strong>The live demo:</strong> nothing you type into the demo on the home page is saved, recorded, or sent anywhere. The whole demo runs on your phone or computer's screen — your name and number never leave your device.</p>
+      <h2>What I collect</h2>
+      <p>When you book a call through Cal.com, that platform collects your name and email so it can send the calendar invite.</p>
+      <p>If you become a client, I'll also have your business contact info, billing details, and the configuration of the system I build for you. That's it.</p>
+      <h2>What I do with it</h2>
+      <ul>
+        <li>I use your name and email to call you back if you booked a call</li>
+        <li>I use your business info to build, run, and maintain your system if you sign up</li>
+        <li>I do NOT sell your contact info, share it with marketing partners, or add you to any third-party newsletter list</li>
+      </ul>
+      <h2>What I don't see</h2>
+      <p>If you become a client and I set up your missed-call text-back:</p>
+      <ul>
+        <li>I never see or store your call content</li>
+        <li>I never read your customers' messages</li>
+        <li>The system only reads ring/answer status to trigger the text-back</li>
+        <li>Your customers' conversations stay between you and them</li>
+      </ul>
+      <h2>Third-party tools</h2>
+      <p>I use a few tools to run this business. They each have their own privacy policies:</p>
+      <ul>
+        <li><strong>Cal.com</strong> for booking calls</li>
+        <li><strong>Stripe</strong> for payments if you become a client</li>
+        <li><strong>Cloudflare</strong> to host this website</li>
+      </ul>
+      <h2>Want me to delete your data?</h2>
+      <p>Email me at diego@valdessystems.com and ask. I'll delete what I have within 7 days and confirm when it's done.</p>
+      <h2>Questions?</h2>
+      <p>Just text or call: (317) 273-9750. Or email diego@valdessystems.com. You'll get a real human (me) — not a ticket queue.</p>
+    </div>
+  </div>
+</div>
+
+<div class="legal-modal" id="terms-modal" role="dialog" aria-modal="true" aria-labelledby="terms-modal-heading" aria-hidden="true">
+  <div class="legal-modal-overlay" data-close-modal></div>
+  <div class="legal-modal-content">
+    <nav aria-label="Main navigation" class="modal-nav">
+      <div class="nav-inner">
+        <a href="#top" class="nav-brand" data-close-modal aria-label="Valdes Systems — home">
+          <div class="nav-stacked-wordmark">
+            <span class="nsw-valdes">VALDES</span>
+            <svg class="nsw-divider" viewBox="0 0 80 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <line x1="0.75" y1="0.75" x2="0.75" y2="9.25" stroke="#ED8B2F" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="0.75" y1="5" x2="79.25" y2="5" stroke="#ED8B2F" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="79.25" y1="0.75" x2="79.25" y2="9.25" stroke="#ED8B2F" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="nsw-systems">SYSTEMS</span>
+          </div>
+        </a>
+        <div class="nav-links" role="list">
+          <a href="#how-it-works" data-close-modal role="listitem">How it works</a>
+          <a href="#demo" data-close-modal role="listitem">Live demo</a>
+          <a href="#pricing" data-close-modal role="listitem">Pricing</a>
+          <a href="#calculator" data-close-modal role="listitem">Estimate</a>
+          <a href="#faq" data-close-modal role="listitem">FAQ</a>
+          <a href="#about" data-close-modal role="listitem">About</a>
+        </div>
+        <a href="https://cal.com/diego-valdes/call" class="nav-cta" aria-label="Book a free 15-minute call">Book a Call</a>
+      </div>
+    </nav>
+    <button class="legal-modal-close" data-close-modal aria-label="Close">✕</button>
+    <div class="legal-modal-body">
+      <h1 id="terms-modal-heading">Terms of Service</h1>
+      <p class="legal-meta">// LAST UPDATED · MAY 2026</p>
+      <p class="legal-lead"><strong>The plain version:</strong> I build automation systems for your business. You pay me. If either of us isn't happy, we can walk away. Here are the details.</p>
+      <h2>Who this is between</h2>
+      <p>These terms are between you (the business owner using my services) and me, Diego Valdes, doing business as Valdes Systems out of Saint Marys, Georgia.</p>
+      <h2>What I provide</h2>
+      <p>I build and maintain automation systems for home-service and trades businesses. The exact services and pricing depend on what we agree to on our call — whether that's missed-call text-back, lead follow-up, review automation, a website, or any combination from my pricing page.</p>
+      <h2>How payment works</h2>
+      <ul>
+        <li>A one-time setup fee is due before I start building</li>
+        <li>Monthly retainers are billed on the same day each month after that</li>
+        <li>All payments go through Stripe</li>
+        <li>If a payment fails, I'll reach out before pausing anything — I'd rather solve the problem than cut you off</li>
+      </ul>
+      <h2>Cancellation</h2>
+      <ul>
+        <li>No long-term contracts. Month-to-month.</li>
+        <li>Cancel anytime with 7 days notice</li>
+        <li>You keep your phone number, your customer history, and any data the system collected for your business</li>
+        <li>No termination fees</li>
+        <li>Setup fees are non-refundable once the build is complete, but if I haven't started yet, you get it back</li>
+      </ul>
+      <h2>What I'm responsible for</h2>
+      <ul>
+        <li>Building the system correctly per what we agreed on the call</li>
+        <li>Keeping it running (uptime, fixes, updates)</li>
+        <li>Responding to your questions within 1 business day</li>
+        <li>Being honest about what the system can and can't do for your business</li>
+      </ul>
+      <h2>What I'm NOT responsible for</h2>
+      <ul>
+        <li>Outages caused by your phone carrier or third-party tools beyond my control</li>
+        <li>Lost revenue if the system fails to catch a call</li>
+        <li>Anything you do with the system that breaks the law (telemarketing laws, TCPA — you're responsible for your own compliance)</li>
+      </ul>
+      <h2>Liability</h2>
+      <p>If something goes wrong because of me, my maximum liability is whatever you've paid me in the last 3 months.</p>
+      <h2>Governing law</h2>
+      <p>These terms are governed by the laws of the State of Georgia.</p>
+      <h2>Changes to these terms</h2>
+      <p>If I update these terms, I'll email you 30 days before the change takes effect. If you don't agree, you can cancel without penalty.</p>
+      <h2>Questions or concerns</h2>
+      <p>Don't sign anything you don't understand. Text me, call me, or email me first.</p>
+      <ul>
+        <li>(317) 273-9750</li>
+        <li>diego@valdessystems.com</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── LEGAL MODAL CONTROLLER ───────────────────────────── */
+(function(){
+  const privacyModal = document.getElementById('privacy-modal');
+  const termsModal   = document.getElementById('terms-modal');
+  const modals = [privacyModal, termsModal].filter(Boolean);
+
+  function openModal(modal) {
+    if (!modal) return;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    const content = modal.querySelector('.legal-modal-content');
+    if (content) content.scrollTop = 0;
+  }
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+  }
+  function closeAllModals() { modals.forEach(closeModal); }
+
+  document.querySelectorAll('[data-open-modal]').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = trigger.dataset.openModal;
+      if (target === 'privacy') openModal(privacyModal);
+      if (target === 'terms')   openModal(termsModal);
+    });
+  });
+  document.querySelectorAll('[data-close-modal]').forEach(trigger => {
+    trigger.addEventListener('click', () => closeAllModals());
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAllModals();
+  });
+})();
+</script>
+
 </body>
 </html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Valdes Systems</title>
+<meta name="description" content="Terms of service for Valdes Systems. Month-to-month. Cancel anytime. No contracts.">
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ─── CSS VARS (matches main site) ──────────────────────── */
+:root {
+  --paper:   #0E2A4D;
+  --paper-2: #0A2540;
+  --paper-3: #143155;
+  --orange:  #ED8B2F;
+  --text-1:  #F4F1EA;
+  --text-2:  #B4C1D4;
+  --text-3:  #6E7E96;
+  --rule:    rgba(255,255,255,0.10);
+  --r: 2px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--paper);
+  color: var(--text-1);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+/* ─── NAV ────────────────────────────────────────────────── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--paper-2);
+  border-bottom: 3px solid var(--orange);
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto;
+  padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px; gap: 24px;
+}
+.nav-brand {
+  text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+}
+.nav-stacked-wordmark {
+  display: flex; flex-direction: column; align-items: center;
+  line-height: 1; gap: 0;
+}
+.nsw-valdes {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px; letter-spacing: .15em;
+  color: var(--text-1);
+}
+.nsw-divider { width: 48px; height: 6px; display: block; }
+.nsw-systems {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8px; letter-spacing: .18em;
+  color: var(--text-3); text-transform: uppercase;
+}
+.nav-back {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px; letter-spacing: .08em;
+  color: var(--text-3); text-decoration: none;
+  transition: color .15s;
+}
+.nav-back:hover { color: var(--text-1); }
+.nav-cta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px; letter-spacing: .08em;
+  color: var(--paper); background: var(--orange);
+  padding: 9px 18px; border-radius: var(--r);
+  text-decoration: none; white-space: nowrap;
+  transition: opacity .15s;
+}
+.nav-cta:hover { opacity: .85; }
+
+/* ─── LEGAL PAGE WRAPPER ─────────────────────────────────── */
+.legal-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 24px 100px;
+}
+.legal-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px; letter-spacing: .1em;
+  color: var(--orange);
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 32px;
+}
+.legal-meta::before {
+  content: '';
+  width: 20px; height: 1px;
+  background: var(--orange);
+  display: inline-block;
+}
+.legal-page h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 8vw, 64px);
+  letter-spacing: .04em;
+  color: var(--text-1);
+  line-height: 1;
+  margin-bottom: 40px;
+}
+.legal-page h2 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px; letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin: 48px 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+}
+.legal-page p {
+  font-size: 16px; color: var(--text-2);
+  line-height: 1.7; margin-bottom: 16px;
+}
+.legal-page p strong {
+  color: var(--text-1); font-weight: 600;
+}
+.legal-page ul {
+  list-style: none; padding: 0;
+  margin: 0 0 20px 0;
+}
+.legal-page ul li {
+  font-size: 16px; color: var(--text-2);
+  line-height: 1.7; padding: 4px 0 4px 20px;
+  position: relative;
+}
+.legal-page ul li::before {
+  content: '—';
+  position: absolute; left: 0;
+  color: var(--orange);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+}
+.legal-contact {
+  margin-top: 48px;
+  padding: 24px;
+  border: 1px solid var(--rule);
+  background: var(--paper-3);
+  border-left: 3px solid var(--orange);
+}
+.legal-contact p { margin-bottom: 8px; }
+.legal-contact p:last-child { margin-bottom: 0; }
+.legal-contact a { color: var(--orange); text-decoration: none; }
+.legal-contact a:hover { text-decoration: underline; }
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 28px 24px;
+}
+.footer-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px;
+}
+.footer-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px; letter-spacing: .08em;
+  color: var(--text-1);
+}
+.footer-tagline {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px; letter-spacing: .1em;
+  color: var(--text-3); margin-top: 2px;
+}
+.footer-right {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px; letter-spacing: .1em;
+  color: var(--text-3); text-align: right; line-height: 1.9;
+}
+.footer-right a { color: var(--text-3); text-decoration: none; }
+.footer-right a:hover { color: var(--text-2); }
+
+@media(max-width: 600px) {
+  .legal-page { padding: 48px 16px 72px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .footer-right { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="valdes-systems-website-pass3.html" class="nav-brand" aria-label="Valdes Systems — home">
+      <div class="nav-stacked-wordmark">
+        <span class="nsw-valdes">VALDES</span>
+        <svg class="nsw-divider" viewBox="0 0 80 10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <line x1="0.75" y1="0.75" x2="0.75" y2="9.25" stroke="#ED8B2F" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="0.75" y1="5" x2="79.25" y2="5" stroke="#ED8B2F" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="79.25" y1="0.75" x2="79.25" y2="9.25" stroke="#ED8B2F" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="nsw-systems">SYSTEMS</span>
+      </div>
+    </a>
+    <a href="valdes-systems-website-pass3.html" class="nav-back">← Back to site</a>
+    <a href="https://cal.com/diego-valdes/call" class="nav-cta" aria-label="Book a free 15-minute call">Book a Call</a>
+  </div>
+</nav>
+
+<main>
+  <div class="legal-page">
+    <div class="legal-meta">// LAST UPDATED · MAY 2026</div>
+    <h1>Terms of Service</h1>
+
+    <p><strong>The plain version:</strong> I build automation systems for your business. You pay me. If either of us isn't happy, we can walk away. Here are the details.</p>
+
+    <h2>Who this is between</h2>
+    <p>These terms are between you (the business owner using my services) and me, Diego Valdes, doing business as Valdes Systems out of Saint Marys, Georgia.</p>
+
+    <h2>What I provide</h2>
+    <p>I build and maintain automation systems for home-service and trades businesses. The exact services and pricing depend on what we agree to on our call — whether that's missed-call text-back, lead follow-up, review automation, a website, or any combination from my pricing page.</p>
+
+    <h2>How payment works</h2>
+    <ul>
+      <li>A one-time setup fee is due before I start building</li>
+      <li>Monthly retainers are billed on the same day each month after that</li>
+      <li>All payments go through Stripe (industry-standard secure payment processor)</li>
+      <li>If a payment fails, I'll reach out before pausing anything — I'd rather solve the problem than cut you off</li>
+    </ul>
+
+    <h2>Cancellation</h2>
+    <ul>
+      <li>No long-term contracts. Month-to-month.</li>
+      <li>Cancel anytime with 7 days notice (so I can shut things down cleanly)</li>
+      <li>You keep your phone number, your customer history, and any data the system collected for your business</li>
+      <li>No termination fees</li>
+      <li>Setup fees are non-refundable once the build is complete, but if I haven't started yet, you get it back</li>
+    </ul>
+
+    <h2>What I'm responsible for</h2>
+    <ul>
+      <li>Building the system correctly per what we agreed on the call</li>
+      <li>Keeping it running (uptime, fixes, updates)</li>
+      <li>Responding to your questions within 1 business day (usually same day)</li>
+      <li>Being honest about what the system can and can't do for your business</li>
+    </ul>
+
+    <h2>What I'm NOT responsible for</h2>
+    <ul>
+      <li>Outages caused by your phone carrier or third-party tools beyond my control</li>
+      <li>Lost revenue if the system fails to catch a call (I make every effort to keep it up, but no system has 100% uptime)</li>
+      <li>Anything you do with the system that breaks the law (telemarketing laws, TCPA, etc — you're responsible for your own compliance)</li>
+    </ul>
+
+    <h2>Liability</h2>
+    <p>If something goes wrong because of me, my maximum liability is whatever you've paid me in the last 3 months. That's standard for service businesses and protects us both from outsized claims over relatively small engagements.</p>
+
+    <h2>Governing law</h2>
+    <p>These terms are governed by the laws of the State of Georgia. If we ever can't work something out, we'll handle it in a Georgia court — but I'd much rather just talk it through and figure it out together.</p>
+
+    <h2>Changes to these terms</h2>
+    <p>If I update these terms, I'll email you 30 days before the change takes effect. If you don't agree, you can cancel without penalty.</p>
+
+    <h2>Questions or concerns</h2>
+    <p>Don't sign anything you don't understand. Text me, call me, or email me first.</p>
+    <div class="legal-contact">
+      <p><a href="tel:+13172739750">(317) 273-9750</a></p>
+      <p><a href="mailto:diego@valdessystems.com">diego@valdessystems.com</a></p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-brand">Valdes Systems</div>
+      <div class="footer-tagline">Automation for the Trades · Saint Marys, GA</div>
+    </div>
+    <div class="footer-right">
+      <div>© 2026 Valdes Systems</div>
+      <div><a href="mailto:diego@valdessystems.com">diego@valdessystems.com</a></div>
+      <div><a href="tel:+13172739750">(317) 273-9750</a></div>
+      <div><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
